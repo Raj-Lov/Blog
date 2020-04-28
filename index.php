@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-lg-8">
             <?php
-              $query = "SELECT * FROM tbl_posts";
+              $query = "SELECT * FROM tbl_posts LIMIT 3";
               $posts = $dbObj->select($query);
               if ($posts) {
                 while ($result = $posts->fetch_assoc()) {
@@ -35,7 +35,7 @@
                   <h3><?php echo $result['title'] ?></h3>
                 </a>
                 <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p><?php echo $result['body']?></p>
+                <p><?php echo $formatObj->postBodyShorten($result['body'])?></p>
                 <a class="button" href="post.php?id=<?php echo $result['id']?>">Read More <i class="ti-arrow-right"></i></a>
               </div>
             </div>
