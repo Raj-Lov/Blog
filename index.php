@@ -1,10 +1,11 @@
 <?php include_once 'config/config.php';?>
 <?php include_once 'lib/Database.php';?>
+<?php include_once 'helpers/Format.php';?>
 <?php include_once 'inc/header.php';?>
 <?php include_once 'inc/slider.php';?>
 <?php
   $dbObj = new Database();
-
+  $formatObj = new Format();
 
 ?>
 
@@ -25,7 +26,7 @@
                 <img class="img-fluid" src="img/blog/blog3.png" alt="">
                 <ul class="thumb-info">
                   <li><a href="#"><i class="ti-user"></i><?php echo $result['author']?></a></li>
-                  <li><a href="#"><i class="ti-notepad"></i><?php echo $result['date']?></a></li>
+                  <li><a href="#"><i class="ti-notepad"></i><?php echo $formatObj->dateFormat($result['date'])?></a></li>
                   <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
                 </ul>
               </div>
