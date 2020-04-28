@@ -2,91 +2,52 @@
 <?php include_once 'lib/Database.php';?>
 <?php include_once 'inc/header.php';?>
 <?php include_once 'inc/slider.php';?>
+<?php
+  $dbObj = new Database();
+
+
+?>
 
     <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin mt-4">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <div class="single-recent-blog-post">
-              <div class="thumb">
-                <img class="img-fluid" src="img/blog/blog1.png" alt="">
-                <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="post.php">
-                  <h3>Woman claims husband wants to name baby girl
-                    after his ex-lover sparking.</h3>
-                </a>
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                <a class="button" href="post.php">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="single-recent-blog-post">
-              <div class="thumb">
-                <img class="img-fluid" src="img/blog/blog2.png" alt="">
-                <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="post.php">
-                  <h3>Woman claims husband wants to name baby girl
-                    after his ex-lover sparking.</h3>
-                </a>
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                <a class="button" href="post.php">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-
+            <?php
+              $query = "SELECT * FROM tbl_posts";
+              $posts = $dbObj->select($query);
+              if ($posts) {
+                while ($result = $posts->fetch_assoc()) {
+                  
+            ?>
             <div class="single-recent-blog-post">
               <div class="thumb">
                 <img class="img-fluid" src="img/blog/blog3.png" alt="">
                 <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
+                  <li><a href="#"><i class="ti-user"></i><?php echo $result['author']?></a></li>
+                  <li><a href="#"><i class="ti-notepad"></i><?php echo $result['date']?></a></li>
                   <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
                 </ul>
               </div>
               <div class="details mt-20">
-                <a href="post.php">
-                  <h3>Tourist deaths in Costa Rica jeopardize safe dest
-                    ination reputation all time. </h3>
+                <a href="post.php?id=<?php echo $result['id']?>">
+                  <h3><?php echo $result['title'] ?></h3>
                 </a>
                 <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                <a class="button" href="post.php">Read More <i class="ti-arrow-right"></i></a>
+                <p><?php echo $result['body']?></p>
+                <a class="button" href="post.php?id=<?php echo $result['id']?>">Read More <i class="ti-arrow-right"></i></a>
               </div>
             </div>
-
-            <div class="single-recent-blog-post">
-              <div class="thumb">
-                <img class="img-fluid" src="img/blog/blog4.png" alt="">
-                <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <a href="post.php">
-                  <h3>Tourist deaths in Costa Rica jeopardize safe dest
-                    ination reputation all time.  </h3>
-                </a>
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                <a class="button" href="post.php">Read More <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
+          <?php
+              }
+              /* End of while loop*/
+            }
+            /* End of If condition*/
+            else{
+              header("location:404.php");
+            }
+            /* End of Else condition*/
+            ?>
             
           <!-- Pagination Area Starts -->
             <div class="row">
