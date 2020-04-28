@@ -9,13 +9,28 @@
 
 ?>
 
+<!-- Pagination -->
+<?php
+  // per page 3 post 
+  $per_page = 2 ;
+  if(isset($_GET['page'])){
+    $page = $_GET['page'];
+  }
+  else{
+    $page = 1;
+  }
+  $start_from = ($page-1)* $per_page;
+
+?>
+<!-- Pagination -->
+
     <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin mt-4">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
             <?php
-              $query = "SELECT * FROM tbl_posts LIMIT 3";
+              $query = "SELECT * FROM tbl_posts LIMIT $start_from, $per_page";
               $posts = $dbObj->select($query);
               if ($posts) {
                 while ($result = $posts->fetch_assoc()) {
@@ -40,34 +55,43 @@
               </div>
             </div>
           <?php
-              }
-              /* End of while loop*/
+
             }
-            /* End of If condition*/
-            else{
-              header("location:404.php");
-            }
-            /* End of Else condition*/
+            /* End of while loop*/
+
             ?>
             
-          <!-- Pagination Area Starts -->
+            <!-- Pagination Area Starts -->
+            <?php 
+
+              $query = "SELECT * FROM tbl_posts";
+              $result = $dbObj->select($query);
+              $total_row = $result->num_rows;
+              $total_pages = ceil($total_row/$per_page);
+
+            ?>
+        
             <div class="row">
               <div class="col-lg-12">
                   <nav class="blog-pagination justify-content-center d-flex">
                       <ul class="pagination">
                           <li class="page-item">
-                              <a href="#" class="page-link" aria-label="Previous">
+                              <a href="index.php?page=1" class="page-link" aria-label="Previous">
                                   <span aria-hidden="true">
-                                      <i class="ti-angle-left"></i>
+                                      First Page
                                   </span>
                               </a>
                           </li>
-                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          
+                          <?php
+                            for ($i=1; $i <= $total_pages ; $i++) { 
+                              echo "<li class='page-item'><a href='index.php?page=$i' class='page-link'>$i</a></li>" ;
+                            }
+                          ?>
                           <li class="page-item">
-                              <a href="#" class="page-link" aria-label="Next">
+                              <a href="index.php?page=<?php echo $total_pages;?>" class="page-link" aria-label="Next">
                                   <span aria-hidden="true">
-                                      <i class="ti-angle-right"></i>
+                                      Last Page
                                   </span>
                               </a>
                           </li>
@@ -76,6 +100,20 @@
               </div>
             </div>
             <!-- Pagination Area Emds -->
+
+          <?php
+
+            }
+            /* End of If condition*/
+
+            else{
+              header("location:404.php");
+            }
+            /* End of Else condition*/
+
+            ?>
+            
+          
           </div>
 
 <?php include_once 'inc/sidebar.php' ?>
