@@ -1,10 +1,5 @@
 <?php include_once 'inc/header.php';?>
 <?php include_once 'inc/slider.php';?>
-<?php
-  $dbObj = new Database();
-  $formatObj = new Format();
-
-?>
 
 <!-- Pagination -->
 <?php

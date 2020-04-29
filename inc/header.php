@@ -1,6 +1,12 @@
 <?php include_once 'lib/Database.php';?>
 <?php include_once 'helpers/Format.php';?>
+<?php
+  // object/instance crate 
+  
+  $dbObj = new Database();
+  $formatObj = new Format();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
