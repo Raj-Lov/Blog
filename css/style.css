@@ -934,8 +934,8 @@ a {
     left: 0;
     background: #fff;
     width: 100%;
-    max-width: 415px;
-    padding-left: 5px
+    max-width: 500px;
+    padding-left: 5px;
 }
 
 @media (min-width: 430px) {

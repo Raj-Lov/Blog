@@ -12,7 +12,7 @@
 <!-- Pagination -->
 <?php
   // per page 3 post 
-  $per_page = 2 ;
+  $per_page = 3 ;
   if(isset($_GET['page'])){
     $page = $_GET['page'];
   }
