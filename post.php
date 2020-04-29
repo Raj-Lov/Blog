@@ -78,7 +78,7 @@
           <!-- Blog post text finished here -->
 
            <div class="news_d_footer flex-column flex-sm-row">
-             <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>4 people like this</a>
+             <a href="#"><span class="align-middle mr-2"><i class="ti-eye"></i></span>Total view : &nbsp; 4</a>
              <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>2 Comments</a>
              <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -87,44 +87,13 @@
                 <a href="#"><i class="fab fa-behance"></i></a>
              </div>
             </div>
-          </div>
+          </div> <hr> <br>
           
-
-          <div class="navigation-area">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                    <div class="thumb">
-                        <a href="#"><img class="img-fluid" src="images/blog/prev.jpg" alt=""></a>
-                    </div>
-                    <div class="arrow">
-                        <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
-                    </div>
-                    <div class="detials">
-                        <p>Prev Post</p>
-                        <a href="#"><h4>A Discount Toner</h4></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                    <div class="detials">
-                        <p>Next Post</p>
-                        <a href="#"><h4>Cartridge Is Better</h4></a>
-                    </div>
-                    <div class="arrow">
-                        <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
-                    </div>
-                    <div class="thumb">
-                        <a href="#"><img class="img-fluid" src="images/blog/next.jpg" alt=""></a>
-                    </div>										
-                </div>									
-            </div>
-          </div> <br>
 
           <!-- Related post  -->
           <div class="related-posts">
             <h2>Related Posts</h2> <br>
-            
-
-            
+                        
             <div class="row">
               <?php
               $cat_id = $result['cat_id'];
@@ -207,17 +176,17 @@
             <form>
                 <div class="form-group form-inline">
                   <div class="form-group col-lg-6 col-md-6 name">
-                    <input type="text" class="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Full Name'">
                   </div>
                   <div class="form-group col-lg-6 col-md-6 email">
                     <input type="email" class="form-control" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
                   </div>										
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
+                    <input type="text" class="form-control" id="subject" placeholder="Website" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Website'">
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                    <textarea class="form-control mb-10" rows="5" name="message" placeholder="Comment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Comment'" required=""></textarea>
                 </div>
                 <a href="#" class="button submit_btn">Post Comment</a>	
             </form>
