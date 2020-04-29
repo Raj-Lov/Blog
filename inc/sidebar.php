@@ -43,52 +43,40 @@
                 </div>
 
                 <div class="single-sidebar-widget popular-post-widget">
-                  <h4 class="single-sidebar-widget__title">Popular Post</h4>
+                  <h4 class="single-sidebar-widget__title">Latest Post</h4>
                   <div class="popular-post-list">
+                  <?php 
+                    $query = "SELECT * FROM tbl_posts ORDER BY id DESC LIMIT 5";
+                    $post = $dbObj->select($query);
+                    if ($post) {
+                      while ($result = $post->fetch_assoc()) {
+                  ?>
                     <div class="single-post-list">
                       <div class="thumb">
-                        <img class="card-img rounded-0" src="images/blog/blog4.png" alt="">
+                        <a href="post.php?id=<?php echo $result['id'] ;?>"><img class="card-img rounded-0" src="admin/upload/<?php echo $result['image']?>" alt="Latest Post"></a>
                         <ul class="thumb-info">
-                          <li><a href="#">Adam Colinge</a></li>
-                          <li><a href="#">Dec 15</a></li>
+                          <li><a href="#"><?php echo $result['author'] ;?></a></li>
+                          <li><a href="#"><?php echo $formatObj->dateFormat($result['date']) ;?></a></li>
                         </ul>
                       </div>
                       <div class="details mt-20">
-                        <a href="post.php">
-                          <h6>Accused of assaulting flight attendant miktake alaways</h6>
+                        <a href="post.php?id=<?php echo $result['id'] ;?>">
+                          <h6><?php echo $result['title'] ;?></h6>
                         </a>
                       </div>
-                    </div>
-                    <div class="single-post-list">
-                      <div class="thumb">
-                        <img class="card-img rounded-0" src="images/blog/blog4.png" alt="">
-                        <ul class="thumb-info">
-                          <li><a href="#">Adam Colinge</a></li>
-                          <li><a href="#">Dec 15</a></li>
-                        </ul>
-                      </div>
-                      <div class="details mt-20">
-                        <a href="post.php">
-                          <h6>Tennessee outback steakhouse the
-                            worker diagnosed</h6>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="single-post-list">
-                      <div class="thumb">
-                        <img class="card-img rounded-0" src="images/blog/blog4.png" alt="">
-                        <ul class="thumb-info">
-                          <li><a href="#">Adam Colinge</a></li>
-                          <li><a href="#">Dec 15</a></li>
-                        </ul>
-                      </div>
-                      <div class="details mt-20">
-                        <a href="post.php">
-                          <h6>Tennessee outback steakhouse the
-                            worker diagnosed</h6>
-                        </a>
-                      </div>
-                    </div>
+                    </div> <br>
+                    
+                    <?php
+
+                      }
+                      /* End of while loop*/
+                    } /* End of if condition*/
+                    else{
+                      header("location: 404.php");
+                    } // End of else condition
+
+                    ?>
+
                   </div>
                 </div>
 
