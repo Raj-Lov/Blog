@@ -1,6 +1,3 @@
-<?php include_once 'config/config.php';?>
-<?php include_once 'lib/Database.php';?>
-<?php include_once 'helpers/Format.php';?>
 <?php include_once 'inc/header.php';?>
 <?php include_once 'inc/slider.php';?>
 <?php

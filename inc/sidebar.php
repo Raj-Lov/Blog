@@ -54,7 +54,7 @@
                   <div class="popular-post-list">
                     <div class="single-post-list">
                       <div class="thumb">
-                        <img class="card-img rounded-0" src="img/blog/thumb/thumb1.png" alt="">
+                        <img class="card-img rounded-0" src="images/blog/blog4.png" alt="">
                         <ul class="thumb-info">
                           <li><a href="#">Adam Colinge</a></li>
                           <li><a href="#">Dec 15</a></li>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="single-post-list">
                       <div class="thumb">
-                        <img class="card-img rounded-0" src="img/blog/thumb/thumb2.png" alt="">
+                        <img class="card-img rounded-0" src="images/blog/blog4.png" alt="">
                         <ul class="thumb-info">
                           <li><a href="#">Adam Colinge</a></li>
                           <li><a href="#">Dec 15</a></li>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="single-post-list">
                       <div class="thumb">
-                        <img class="card-img rounded-0" src="img/blog/thumb/thumb3.png" alt="">
+                        <img class="card-img rounded-0" src="images/blog/blog4.png" alt="">
                         <ul class="thumb-info">
                           <li><a href="#">Adam Colinge</a></li>
                           <li><a href="#">Dec 15</a></li>
@@ -100,7 +100,7 @@
                 </div>
 
                   <div class="single-sidebar-widget tag_cloud_widget">
-                    <h4 class="single-sidebar-widget__title">Popular Post</h4>
+                    <h4 class="single-sidebar-widget__title">Popular Tags</h4>
                     <ul class="list">
                       <li>
                           <a href="#">project</a>

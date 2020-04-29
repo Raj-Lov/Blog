@@ -1,3 +1,6 @@
+<?php include_once 'lib/Database.php';?>
+<?php include_once 'helpers/Format.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
