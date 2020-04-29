@@ -35,7 +35,7 @@
                       } // end of while condition
                       } // end of if condition
                       else{
-                        echo "No Category Available";
+                        echo "<li>No Category Available</li>";
                       } // end of else condition
                     ?>
 
