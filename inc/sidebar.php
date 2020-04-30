@@ -3,13 +3,15 @@
               <div class="widget-wrap">
                 <div class="single-sidebar-widget newsletter-widget">
                   <h4 class="single-sidebar-widget__title">Search Post</h4>
-                  <div class="form-group mt-30">
-                    <div class="col-autos">
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Search Keyword" onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Search Keyword'">
+                  <form method="get" action="search.php">
+                    <div class="form-group mt-30">
+                      <div class="col-autos">
+                        <input type="text" name="search" class="form-control" id="inlineFormInputGroup" placeholder="Search Keyword" onfocus="this.placeholder = ''"
+                          onblur="this.placeholder = 'Search Keyword'">
+                      </div>
                     </div>
-                  </div>
-                  <button class="bbtns d-block mt-20 w-100">Search</button>
+                    <input class="bbtns d-block mt-20 w-100" name="submit" type="submit" value="Search"/>
+                  </form>
                 </div>
 
 
@@ -22,7 +24,6 @@
                       if($result){
                         while ($category = $result->fetch_assoc()) {
                           
-                        
                     ?>
                     <li>
                       <a href="posts.php?category=<?php echo $category['id']?>" class="d-flex justify-content-between">

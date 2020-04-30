@@ -2562,3 +2562,17 @@ a {
 .footer-text i {
     color: #ff9907
 }
+
+
+
+/** My Custom Css **/
+
+.search {
+    color: #FF9907;
+    margin-top: 120px;
+    text-align: center;
+    font-size: 20px;
+}
+.orange-color{
+    color: #FF9907;
+}
