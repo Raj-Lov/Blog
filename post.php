@@ -100,7 +100,12 @@
 
               } // first while condition end here
 
-              $query_cat = "SELECT * FROM tbl_posts WHERE cat_id = '$cat_id' ORDER BY rand() LIMIT 6";
+              // getting related posts with current post also
+              // $query_cat = "SELECT * FROM tbl_posts WHERE cat_id = '$cat_id' ORDER BY rand() LIMIT 3";
+
+              // getting related posts without current post
+              $query_cat = "SELECT * FROM tbl_posts WHERE id NOT IN('$id') AND cat_id = '$cat_id' ORDER BY rand() LIMIT 3";
+
               $related_post = $dbObj->select($query_cat);
               if ($related_post) {
                 while ($rel_post_get = $related_post->fetch_assoc()) {
