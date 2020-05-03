@@ -4984,11 +4984,13 @@ table.text-center th {
 
 .success{
   color: #018001;
-  margin: 10px 0 20px;
+  margin: 10px 0;
   display: inline-block;
+  padding: 0 0 0 5px;
 }
-.error{
+.error {
   color: #fd0000;
-  margin: 10px 0 20px;
+  margin: 10px 0;
   display: inline-block;
+  padding: 0 0 0 5px;
 }

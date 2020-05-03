@@ -79,7 +79,7 @@
           }
         }
         else{
-          echo "<span class='error'> Usrename or Password is not matched! </span>";
+          echo "<span class='error'> Username or Password is not matched! </span>";
         }
 
       }

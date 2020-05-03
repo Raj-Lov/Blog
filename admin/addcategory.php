@@ -2,48 +2,76 @@
 
  <?php include_once 'inc/sidebar.php';?>
 
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Add Category
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Add Category
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
 
-                <!-- Main content -->
-                <section class="content">
+        <!-- Main content -->
+        <section class="content">
 
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="box box-primary">
-                            <!-- form start -->
-                            <form role="form">
-                                <div class="box-body">
-                                    <div class="form-group">
-                                        <label for="category">Category Name</label>
-                                        <input type="text" class="form-control" id="category" placeholder="Enter Category Name">
-                                    </div>
-                                </div>
-                                <!-- /.box-body -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <!-- form start -->
+                <?php
+                  if(isset($_POST['save'])){
+                    $name = $_POST['name'];
+                    $name = $formatObj->validation($name);
+                    
+                    $name = $dbObj->link->real_escape_string($name); 
 
-                                <div class="box-footer">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
-                            </form>
+                    if (empty($name)) {
+                        echo "<span class='error'> Category field must not be empty! </span>";
+                    }
+                    else{
+                        $query="INSERT INTO tbl_categories(name) VALUES('$name')";
+                        $insert = $dbObj->create($query);
+                        if ($insert) {
+                            echo "<span class='success'> Category saved successfully! </span>";
+                        }
+                        else{
+                            echo "<span class='error'> Category not saved! </span>";
+                        }
+                    }
+
+                    
+
+
+                  }
+
+
+                ?>  
+                    <form action="" method="post">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="category">Category Name</label>
+                                <input type="text" name="name" class="form-control" id="category" placeholder="Enter Category Name">
+                            </div>
                         </div>
-                        <!-- /.box -->
-                    </div>
+                        <!-- /.box-body -->
 
-
-                </section>
-                <!-- /.content -->
+                        <div class="box-footer">
+                            <button name="save" type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box -->
             </div>
-            <!-- /.content-wrapper -->
+
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
 
  <?php include_once 'inc/footer.php';?>
