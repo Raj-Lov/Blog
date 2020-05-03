@@ -4977,3 +4977,18 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+
+
+/* My custom css */
+
+
+.success{
+  color: #018001;
+  margin: 10px 0 20px;
+  display: inline-block;
+}
+.error{
+  color: #fd0000;
+  margin: 10px 0 20px;
+  display: inline-block;
+}
