@@ -1,12 +1,21 @@
 <?php 
   include_once '../lib/Session.php';
+  include_once '../config/config.php';
+  include_once '../lib/Database.php';
+  include_once '../helpers/Format.php';
 
+  // object/instance crate 
+  $dbObj = new Database();
+  $formatObj = new Format();
+
+  // Session checking 
   Session::checkSession();
 
+  // Logout and session destroy
   if (isset($_GET['action']) && $_GET['action'] == "logout") {
     Session::destroy();
   }
-  
+
 ?>
 
 <!DOCTYPE html>
