@@ -1,3 +1,14 @@
+<?php 
+  include_once '../lib/Session.php';
+
+  Session::checkSession();
+
+  if (isset($_GET['action']) && $_GET['action'] == "logout") {
+    Session::destroy();
+  }
+  
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -150,7 +161,7 @@
                   <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="?action=logout" class="btn btn-default btn-flat">Logout</a>
                 </div>
               </li>
             </ul>

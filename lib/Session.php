@@ -25,15 +25,15 @@ class Session{
 		
 		self::init();
 		
-		if (self::get() == false) {
+		if (self::get("login") == false) {
 			self::destroy();
-			header("location: login.php");
+			header("location:login.php");
 		}
 	}
 
 	public static function destroy(){
 		session_destroy();
-		header("location: login.php");
+		header("location:login.php");
 	}
 	
 }
