@@ -67,7 +67,7 @@
         if($result != false){
             $value = $result->fetch_array();
             $row = $result->num_rows;
-            print_r($value);exit();
+            // checking if any row found then set in session and redirect
           if ($row > 0) {
             Session::set("login",true);
             Session::set("username",$value['username']);
