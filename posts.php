@@ -28,10 +28,10 @@
 					    header("location: 404.php");
 					}
 					else{
-				    	$id = $_GET['category'];
+				    	$cat_id = $_GET['category'];
 				  	}
 
-	              $query = "SELECT * FROM tbl_posts WHERE cat_id = '$id' ";
+	              $query = "SELECT * FROM tbl_posts WHERE cat_id = '$cat_id' ";
 	              $posts = $dbObj->select($query);
 	              if ($posts) {
 	                while ($result = $posts->fetch_assoc()) {
@@ -61,7 +61,7 @@
 	            /* End of while loop*/
 	        	} /* End of if condition*/
 	        	else{
-	        		header("location: 404.php");
+	        		echo "<h4>No posts found in this category!</h4>";
 	        	} // End of else condition
 
 	            ?>
