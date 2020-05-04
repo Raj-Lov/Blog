@@ -25,6 +25,24 @@
                         <div class="box-header">
                             <h3 class="box-title">Category Lists</h3>
                         </div>
+                        <!-- Category delete -->
+                        <?php
+                            if (!isset($_GET['delete_id']) || $_GET['delete_id'] == NULL) {
+                                echo "<script>window.location('viewcategory.php');</script>";
+                            }
+                            else{
+                                $delete_id = $_GET['delete_id'];
+                                $query = "DELETE FROM tbl_categories WHERE id = '$delete_id' ";
+                                $delete_cat = $dbObj->delete($query);
+                                if ($delete_cat) {
+                                    echo "<span class='success'> Category deleted successfully! </span>";
+                                }
+                                else{
+                                    echo "<span class='error'> Category not deleted! </span>";
+                                }
+                            }
+
+                        ?>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="example1" class="table table-bordered table-striped">
@@ -48,7 +66,7 @@
                                     <tr>
                                         <td><?php echo $i;?></td>
                                         <td><?php echo $result['name'];?></td>
-                                        <td><a href="edit-category.php?id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure you want to Delete this Category?');" href="delete-category.php?id=<?php echo $result['id']?>">Delete</a></td>
+                                        <td><a href="edit-category.php?id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure you want to Delete this Category?');" href="?delete_id=<?php echo $result['id']?>">Delete</a></td>
                                     </tr>
                                     <?php
                                      } // while condition ends here
