@@ -43,7 +43,7 @@
                 while ($result = $post->fetch_assoc()) {
             ?>
 
-            <img class="img-fluid" src="admin/upload/<?php echo $result['image']?>" alt="">
+            <img class="img-fluid" src="admin/<?php echo $result['image']?>" alt="">
             <a href="#"><h4><?php echo $result['title']?></h4></a>
             <div class="user_details">
               <div class="float-left tags">
@@ -112,7 +112,7 @@
 
             ?>
               <div class="col-md-4">
-                <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img src="admin/upload/<?php echo $rel_post_get['image']?>" alt="Related Article" class="img-responsive img-thumbnail"><span>Post Title</span></a>
+                <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img src="admin/<?php echo $rel_post_get['image']?>" alt="Related Article" class="img-responsive img-thumbnail"><span>Post Title</span></a>
               </div>
                 <?php 
 

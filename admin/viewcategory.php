@@ -17,7 +17,7 @@
 
         <!-- Main content -->
         <section class="content">
-
+        <div class="row">
             <div class="col-md-12">
                 <!-- general form elements -->
                 <div class="box box-primary">
@@ -36,6 +36,7 @@
                                 $delete_cat = $dbObj->delete($query);
                                 if ($delete_cat) {
                                     echo "<span class='success'> Category deleted successfully! </span>";
+                                    
                                 }
                                 else{
                                     echo "<span class='error'> Category not deleted! </span>";
@@ -81,7 +82,7 @@
                 <!-- /.box -->
             </div>
 
-
+        </div>
         </section>
         <!-- /.content -->
     </div>

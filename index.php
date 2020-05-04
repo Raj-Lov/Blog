@@ -30,7 +30,7 @@
             ?>
             <div class="single-recent-blog-post">
               <div class="thumb">
-                <img class="img-fluid" src="admin/upload/<?php echo $result['image']?>" alt="">
+                <img class="img-fluid" src="admin/<?php echo $result['image']?>" alt="">
                 <ul class="thumb-info">
                   <li><a href="#"><i class="ti-user"></i><?php echo $result['author']?></a></li>
                   <li><a href="#"><i class="ti-notepad"></i><?php echo $formatObj->dateFormat($result['date'])?></a></li>
