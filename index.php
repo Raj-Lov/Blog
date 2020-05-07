@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-lg-8">
             <?php
-              $query = "SELECT * FROM tbl_posts LIMIT $start_from, $per_page";
+              $query = "SELECT * FROM tbl_posts ORDER BY id DESC LIMIT $start_from, $per_page";
               $posts = $dbObj->select($query);
               if ($posts) {
                 while ($result = $posts->fetch_assoc()) {
