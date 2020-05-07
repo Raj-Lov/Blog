@@ -110,7 +110,17 @@
                                             
                                        
                                 ?>
-                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                    <option
+                                     <?php
+                                        if ($edit_result['cat_id'] == $row['id']) { 
+                                        ?>
+                                        selected = "selected"
+
+                                    <?php
+                                        }
+                                       ?>   
+
+                                     value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
 
                                 <?php
                                  }
