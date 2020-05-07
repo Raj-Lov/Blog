@@ -44,7 +44,7 @@
 
 	            <div class="single-recent-blog-post">
 	              <div class="thumb">
-	                <img class="img-fluid" src="admin/upload/<?php echo $result['image']?>" alt="">
+	                <img class="img-responsive" width="100%" height="300" src="admin/<?php echo $result['image']?>" alt="">
 	                <ul class="thumb-info">
 	                  <li><a href="#"><i class="ti-user"></i><?php echo $result['author']?></a></li>
 	                  <li><a href="#"><i class="ti-notepad"></i><?php echo $formatObj->dateFormat($result['date'])?></a></li>
@@ -59,7 +59,7 @@
 	                <p><?php echo $formatObj->postBodyShorten($result['body'])?></p>
 	                <a class="button" href="post.php?id=<?php echo $result['id']?>">Read More <i class="ti-arrow-right"></i></a>
 	              </div>
-	            </div>
+	            </div> <hr>
 	          <?php
 
 	            }

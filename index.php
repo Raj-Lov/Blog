@@ -30,7 +30,7 @@
             ?>
             <div class="single-recent-blog-post">
               <div class="thumb">
-                <img class="img-fluid" src="admin/<?php echo $result['image']?>" alt="">
+                <img width="100%" height="300" class="img-responsive" src="admin/<?php echo $result['image']?>" alt="">
                 <ul class="thumb-info">
                   <li><a href="#"><i class="ti-user"></i><?php echo $result['author']?></a></li>
                   <li><a href="#"><i class="ti-notepad"></i><?php echo $formatObj->dateFormat($result['date'])?></a></li>
@@ -46,6 +46,7 @@
                 <a class="button" href="post.php?id=<?php echo $result['id']?>">Read More <i class="ti-arrow-right"></i></a>
               </div>
             </div>
+            <hr>
           <?php
 
             }
@@ -99,7 +100,7 @@
             /* End of If condition*/
 
             else{
-              header("location:404.php");
+              echo "<h2>No posts available in blog. </h2>";;
             }
             /* End of Else condition*/
 

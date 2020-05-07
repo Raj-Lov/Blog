@@ -2,68 +2,89 @@
 
 <?php include_once 'inc/sidebar.php';?>
 
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        View Posts
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                View Posts
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
 
-                <!-- Main content -->
-                <section class="content">
+        <!-- Main content -->
+        <section class="content">
 
-                    <div class="col-md-12">
-                        <!-- general form elements -->
-                        <div class="box box-primary">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Post Lists</h3>
-                                </div>
-                                <!-- /.box-header -->
-                                <div class="box-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Post Title</th>
-                                                <th>Description</th>
-                                                <th>Image</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>All others</td>
-                                                <td>All others</td>
-                                                <td><a href="editpost.html">Edit</a> | <a href="deletepost.html">Delete</a></td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Post Title</th>
-                                                <th>Description</th>
-                                                <th>Image</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
-                                <!-- /.box-body -->
-                            </div>
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">Post Lists</h3>
                         </div>
-                        <!-- /.box -->
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Post Title</th>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Image</th>
+                                        <th>Author</th>
+                                        <th>Tags</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    $query = "SELECT tbl_posts.*, tbl_categories.name
+                                        FROM tbl_posts
+                                        INNER JOIN tbl_categories
+                                        ON tbl_posts.cat_id = tbl_categories.id
+                                        ORDER BY tbl_posts.title DESC" ; 
+                                    $posts_details = $dbObj->select($query);
+                                    if ($posts_details) {
+                                        $i = 0;
+                                        while ($result = $posts_details->fetch_assoc()) {
+                                            $i++;
+                                        
+                                ?>
+                                    <tr>
+                                        <td><?php echo $i;?></td>
+                                        <td><?php echo $result['title'];?></td>
+                                        <td><?php echo $formatObj->postBodyShorten($result['body'],100);?></td>
+                                        <td><?php echo $result['name'];?></td>
+                                        <td><img width="50" height="50" src="<?php echo $result['image'];?>" /></td>
+                                        <td><?php echo $result['author'];?></td>
+                                        <td><?php echo $result['tags'];?></td>
+                                        <td><?php echo $formatObj->dateFormat($result['date']);?></td>
+                                        <td><a href="editpost.html">Edit</a> | <a href="deletepost.html">Delete</a></td>
+                                    </tr>
+
+                                    <?php
+                                        }
+                                    }
+
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
                     </div>
-
-
-                </section>
-                <!-- /.content -->
+                </div>
+                <!-- /.box -->
             </div>
-            <!-- /.content-wrapper -->
+
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
 <?php include_once 'inc/footer.php';?>

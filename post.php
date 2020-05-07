@@ -43,7 +43,7 @@
                 while ($result = $post->fetch_assoc()) {
             ?>
 
-            <img class="img-fluid" src="admin/<?php echo $result['image']?>" alt="">
+            <img width="100%" height="300" class="img-responsive" src="admin/<?php echo $result['image']?>" alt="Post image">
             <a href="#"><h4><?php echo $result['title']?></h4></a>
             <div class="user_details">
               <div class="float-left tags">
