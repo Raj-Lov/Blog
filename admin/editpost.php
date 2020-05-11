@@ -45,28 +45,53 @@
                 $tags = $dbObj->link->real_escape_string($_POST['tags']);
                 $author = $dbObj->link->real_escape_string($_POST['author']); 
 
-                if (empty($title) || empty($cat_id) || empty($body) || empty($file_name) || empty($tags) || empty($author) ) {
+                // Update procedure starts here
+                // If all fields are empty excepts image field, then show an error.
+                if (empty($title) || empty($cat_id) || empty($body) || empty($tags) || empty($author) ) {
                     echo "<span class='error'> Field must not be empty! </span>";
                 }
-                elseif ($file_size >1048567){
-                    echo "<span class='error'>Image Size should be less then 1MB!</span>";
-                } 
-                elseif (in_array($file_ext, $permited) === false) {
-                    echo "<span class='error'>You can upload only:-" .implode(', ', $permited)."</span>";
-                } 
+                 // If all fields are not empty then process here
                 else{
-                    move_uploaded_file($file_temp, $uploaded_image);
-                    $query = "INSERT INTO tbl_posts(cat_id, title, body, image, author, tags) VALUES('$cat_id', '$title', '$body','$uploaded_image','$author','$tags') " ;
-                    $inserted_rows = $dbObj->create($query);
-                    if ($inserted_rows) {
-                     echo "<span class='success'>Post Inserted Successfully!
-                     </span>";
+                    // If image filled is not empty then process here
+                    if(!empty($file_name)){
+
+                        if ($file_size >1048567){
+                            echo "<span class='error'>Image Size should be less then 1MB!</span>";
+                        } 
+                        elseif (in_array($file_ext, $permited) === false) {
+                            echo "<span class='error'>You can upload only:-" .implode(', ', $permited)."</span>";
+                        } 
+                        else{
+                            move_uploaded_file($file_temp, $uploaded_image);
+                            $query = "UPDATE tbl_posts SET cat_id = '$cat_id' , title = '$title' , body = '$body' , image = '$uploaded_image' , author = '$author' , tags ='$tags' WHERE id = '$edit_id' " ;
+                            $updated_row = $dbObj->update($query);
+                            if ($updated_row) {
+                             echo "<span class='success'>Post Updated Successfully!
+                             </span>";
+                            }
+                            else{
+                                echo "<span class='error'>Post Update failed!.
+                             </span>";
+                            }
+                        }
                     }
+
+                    // If image field is empty and other fileds are fields are filled with values then process here . 
                     else{
-                        echo "<span class='error'>Post insert failed!.
-                     </span>";
+                        $query = "UPDATE tbl_posts SET cat_id = '$cat_id' , title = '$title' , body = '$body' , author = '$author' , tags ='$tags' WHERE id = '$edit_id' " ;
+                        $updated_row = $dbObj->update($query);
+                        if ($updated_row) {
+                         echo "<span class='success'>Post Updated Successfully!
+                             </span>";
+                        }
+                        else{
+                            echo "<span class='error'>Post Update failed!.
+                             </span>";
+                        }
                     }
+
                 }
+
             }
 
         ?>

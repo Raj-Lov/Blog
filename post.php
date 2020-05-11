@@ -71,7 +71,7 @@
     
             <!-- Blog post text start here  -->
 
-            <p><?php echo $result['body']?></p>
+           <?php echo $result['body']?>
 
           
 
