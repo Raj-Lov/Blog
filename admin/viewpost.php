@@ -47,7 +47,7 @@
                                         FROM tbl_posts
                                         INNER JOIN tbl_categories
                                         ON tbl_posts.cat_id = tbl_categories.id
-                                        ORDER BY tbl_posts.title DESC" ; 
+                                        ORDER BY id DESC" ; 
                                     $posts_details = $dbObj->select($query);
                                     if ($posts_details) {
                                         $i = 0;
