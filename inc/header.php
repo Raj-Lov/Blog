@@ -64,12 +64,27 @@
               <li class="nav-item"><a class="nav-link" href="privacy.php">Privacy</a></li>
               <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
             </ul>
+
+            <!-- get social links from db  -->
+            <?php
+
+            $query = "SELECT * FROM tbl_socials WHERE id = '1' ";
+            $get_data = $dbObj->select($query);
+            if ($get_data) {
+                $result = $get_data->fetch_assoc();
+
+            ?>
             <ul class="nav navbar-nav navbar-right navbar-social">
-              <li><a href="#"><i class="ti-facebook"></i></a></li>
-              <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li><a href="#"><i class="ti-instagram"></i></a></li>
-              <li><a href="#"><i class="ti-skype"></i></a></li>
+              <li><a target="_blank" href="<?php echo $result['facebook']?>"><i class="ti-facebook"></i></a></li>
+              <li><a target="_blank" href="<?php echo $result['twitter']?>"><i class="ti-twitter-alt"></i></a></li>
+              <li><a target="_blank" href="<?php echo $result['linkedin']?>"><i class="ti-linkedin"></i></a></li>
+              <li><a target="_blank" href="<?php echo $result['instagram']?>"><i class="ti-instagram"></i></a></li>
             </ul>
+
+            <?php 
+              }
+            ?>
+
           </div> 
         </div>
       </nav>

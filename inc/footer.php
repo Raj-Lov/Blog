@@ -45,20 +45,35 @@
           <div class="single-footer-widget">
             <h6>Follow Us</h6>
             <p>Let us be social</p>
+
+            <!-- get social link from db process here -->
+            <?php
+
+            $query = "SELECT * FROM tbl_socials WHERE id = '1' ";
+            $get_data = $dbObj->select($query);
+            if ($get_data) {
+                $result = $get_data->fetch_assoc();
+
+            ?>
             <div class="footer-social d-flex align-items-center">
-              <a href="#">
+              <a target="_blank" href="<?php echo $result['facebook']?>">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#">
+              <a target="_blank" href="<?php echo $result['twitter']?>">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#">
-                <i class="fab fa-dribbble"></i>
+              <a target="_blank" href="<?php echo $result['linkedin']?>">
+                <i class="fab fa-linkedin"></i>
               </a>
-              <a href="#">
-                <i class="fab fa-behance"></i>
+              <a target="_blank" href="<?php echo $result['instagram']?>">
+                <i class="fab fa-instagram"></i>
               </a>
             </div>
+
+            <?php 
+              }
+            ?>
+
           </div>
         </div>
       </div>
