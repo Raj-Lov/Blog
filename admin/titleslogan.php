@@ -6,14 +6,6 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
 
-        <?php
-
-        $query = "SELECT * FROM tbl_site_titles WHERE id = '1' ";
-        $get_data = $dbObj->select($query);
-        if ($get_data) {
-            $result = $get_data->fetch_assoc();
-
-        ?>
         <section class="content-header">
             <h1>
                 Update Site Title & Slogan
@@ -23,15 +15,89 @@
                 <li class="active">Dashboard</li>
             </ol>
         </section>
-
         <!-- Main content -->
+        
         <section class="content">
             <div class="row">
                 <div class="col-md-8">
+                    <!-- Update procedure starts here -->
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                        $title = $formatObj->validation($_POST['title']);
+                        $slogan = $formatObj->validation($_POST['slogan']);
+
+                        // for image upload
+                        $permited  = array('png');
+                        $file_name = $_FILES['logo']['name'];
+                        $file_size = $_FILES['logo']['size'];
+                        $file_temp = $_FILES['logo']['tmp_name'];
+
+                        $div = explode('.', $file_name);
+                        $file_ext = strtolower(end($div));
+                        $same_image = "logo".'.'.$file_ext;
+                        $uploaded_image = "upload/".$same_image;
+
+                        // for protect to sql injection 
+                        $title = $dbObj->link->real_escape_string($_POST['title']);
+                        $slogan = $dbObj->link->real_escape_string($_POST['slogan']);
+
+                        if (empty($title) || empty($slogan) ) {
+                            echo "<span class='error'> Field must not be empty! </span>";
+                        
+                        }
+                        else if(!empty($file_name)){
+                            if ($file_size >1048567) {
+                                echo "<span class='error'>Image Size should be less then 1MB!</span>";
+                            }
+
+                            else if (in_array($file_ext, $permited) === false) {
+                                echo "<span class='error'>You can upload only:-" .implode(', ', $permited)."</span>";
+                            } 
+                            else{
+                                move_uploaded_file($file_temp, $uploaded_image);
+                                $query = "UPDATE tbl_site_titles SET title = '$title' , 
+                                slogan = '$slogan' , logo = '$uploaded_image' WHERE id = 1 " ;
+                                $updated_rows = $dbObj->update($query);
+                                if ($updated_rows) {
+                                 echo "<span class='success'>Data Updated Successfully!
+                                 </span>";
+                                }
+                                else{
+                                    echo "<span class='error'>Data Update failed!.
+                                 </span>";
+                                }
+                            }
+
+                        }
+                        else{
+                            $query = "UPDATE tbl_site_titles SET title = '$title' , slogan = '$slogan'  WHERE id = 1 " ;
+                            $updated_rows = $dbObj->update($query);
+                            if ($updated_rows) {
+                             echo "<span class='success'>Data Updated Successfully!
+                             </span>";
+                            }
+                            else{
+                                echo "<span class='error'>Data Update failed!.
+                             </span>";
+                            }
+                        }
+                    }
+
+                ?>
                     <!-- general form elements -->
                     <div class="box box-primary">
+                        
+                        <!-- Get all data from database -->
+                        <?php
+
+                        $query = "SELECT * FROM tbl_site_titles WHERE id = '1' ";
+                        $get_data = $dbObj->select($query);
+                        if ($get_data) {
+                            $result = $get_data->fetch_assoc();
+
+                        ?>
                         <!-- form start -->
-                        <form method="" enctype="multipart/form-data" role="form">
+                        <form method="POST" enctype="multipart/form-data" role="form">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="title">Website Title</label>
@@ -69,6 +135,8 @@
             }
 
             ?>
+
+
         </section>
         <!-- /.content -->
     </div>
