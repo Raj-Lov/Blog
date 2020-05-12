@@ -94,8 +94,18 @@ a {
     transition: background 0.4s, all 0.3s linear
 }
 
-.header_area .navbar-brand {
+/*.header_area .navbar-brand {
     margin-right: 30px
+}*/
+.header_area .main_menu .logo_h img {
+    width: 150px;
+    height: auto;
+}
+.header_area .main_menu .title {
+    margin: 0 15px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF9907;
 }
 
 @media (max-width: 991px) {
