@@ -78,8 +78,21 @@
         </div>
       </div>
       <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+       <!-- Get copyright data from database process here -->
+          <?php
+
+          $query = "SELECT * FROM tbl_copyrights WHERE id = '1' ";
+          $get_data = $dbObj->select($query);
+          if ($get_data) {
+              $result = $get_data->fetch_assoc();
+
+          ?>
         <p class="footer-text m-0">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with   <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"> Colorib</a> | Blog site developed by <a href="https://facebook.com/tawfiquebd" target="_blank">Md Tawfique Hossain</a></p>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with   <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"> Colorib</a> | <a href="https://facebook.com/tawfiquebd" target="_blank"><?php echo $result['text']?></a> | 2020 - <?php echo date('Y')?></p>
+
+        <?php
+          }
+        ?>
       </div>
     </div>
   </footer>
