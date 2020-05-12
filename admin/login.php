@@ -1,6 +1,6 @@
 <?php 
   include_once '../lib/Session.php';
-  Session::init();
+  Session::checkLogin();
 ?>
 <?php include_once '../config/config.php';?>
 <?php include_once '../lib/Database.php';?>
