@@ -33,15 +33,28 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-certificate"></i>
-            <span>Update Pages</span>
+            <span>Pages</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> About Us</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Contact Us</a></li>
-          </ul>
+            <li><a href="addpage.php"><i class="fa fa-circle-o"></i> Add New Page</a></li>
+            <?php
+              $query = "SELECT * FROM tbl_pages";
+              $get_pages = $dbObj->select($query);
+              if ($get_pages) {
+                while ($result = $get_pages->fetch_assoc()) {
+                   
+            ?>
+            <li><a href="page.php?pageid=<?php echo $result['id']?>"><i class="fa fa-circle-o"></i><?php echo $result['name'];?></a></li>
+
+            <?php
+                }
+              }
+            ?>
+
+          </ul> 
         </li>
         <li class="treeview">
           <a href="#">
