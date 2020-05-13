@@ -66,7 +66,7 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" class="pull-right btn btn-primary">Save</button>
+                            <button type="submit" class="pull-right btn btn-primary">Create</button>
                         </div>
                     </form>
                 </div>

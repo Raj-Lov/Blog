@@ -88,7 +88,8 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <button type="submit" class="pull-right btn btn-primary">Update</button>
+                            <button type="submit" class=" btn btn-primary">Update</button>
+                            <a onclick="return confirm('Are you sure to delete this page?');" class=" btn btn-danger" href="deletepage.php?deleteid=<?php echo $result['id'];?>">Delete</a>
                         </div>
                     </form>
                     <?php

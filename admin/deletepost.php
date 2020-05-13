@@ -2,7 +2,6 @@
   include_once '../lib/Session.php';
   include_once '../config/config.php';
   include_once '../lib/Database.php';
-  include_once '../helpers/Format.php';
 
   // object/instance crate 
   $dbObj = new Database();
