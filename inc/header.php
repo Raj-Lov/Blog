@@ -59,10 +59,22 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-center">
-              <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="privacy.php">Privacy</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+              <?php
+
+                $query = "SELECT * FROM tbl_pages ";
+                $get_pages = $dbObj->select($query);
+                if ($get_pages) {
+                  while($result = $get_pages->fetch_assoc()){
+
+              ?> 
+              <li class="nav-item"><a class="nav-link" href="page.php?page=<?php echo $result['id']?>"><?php echo $result['name']?></a></li>
+              <?php
+                  }
+                }
+              ?>
+              <li class="nav-item"><a class="nav-link" target="_blank" href="contact.php">Contact</a></li>
+              
             </ul>
 
             <!-- get social links from db  -->
