@@ -14,7 +14,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sensive Blog - Home</title>
+  <?php 
+    if (isset($_GET['page'])) {
+      $pagetitle = $_GET['page'];
+      
+      $query = "SELECT * FROM tbl_pages WHERE id = '$pagetitle' ";
+      $page_title = $dbObj->select($query);
+      if ($page_title) {
+        $result = $page_title->fetch_assoc();
+    
+  ?>
+  <title><?php echo ucwords($result['name']);?> - <?php echo TITLE; ?></title>
+  <?php
+      }
+    }
+    else if(isset($_GET['id'])){
+      $postid = $_GET['id'];
+      $query = "SELECT * FROM tbl_posts WHERE id = '$postid' ";
+      $post_title = $dbObj->select($query);
+      if($post_title){
+        $result = $post_title->fetch_assoc();
+      ?>
+  <title><?php echo ucwords($result['title']);?> - <?php echo TITLE; ?></title>
+
+     <?php 
+      }
+    }
+    else{
+      if ($formatObj->getTitle() == TRUE) {
+        ?>
+  <title><?php echo $formatObj->getTitle();?> - <?php echo TITLE; ?></title>
+
+      <?php
+      }
+    }
+
+  ?>
+
 	<link rel="icon" href="img/Fevicon.png" type="image/png">
 
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
@@ -33,7 +69,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <?php
-
+            // retrieve site title , slogan and logo from database
             $query = "SELECT * FROM tbl_site_titles WHERE id = '1' ";
             $get_data = $dbObj->select($query);
             if ($get_data) {
@@ -73,7 +109,7 @@
                   }
                 }
               ?>
-              <li class="nav-item"><a class="nav-link" target="_blank" href="contact.php">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
               
             </ul>
 

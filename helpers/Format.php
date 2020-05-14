@@ -26,6 +26,20 @@ class Format{
 		return $data;
 	}
 
+	// get page name for title
+	public function getTitle(){
+		$path = $_SERVER['SCRIPT_FILENAME'];
+		$title = basename($path,'.php');
+		if($title == 'index'){
+			$title = ucwords('home');
+		}
+		else if($title == 'contact'){
+			$title = ucwords('contact');
+		}
+		
+		return $title;
+	}
+
 }
 
 
