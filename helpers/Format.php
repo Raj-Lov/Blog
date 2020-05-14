@@ -30,14 +30,15 @@ class Format{
 	public function getTitle(){
 		$path = $_SERVER['SCRIPT_FILENAME'];
 		$title = basename($path,'.php');
+		// $title = str_replace("_", " ", $title);
 		if($title == 'index'){
-			$title = ucwords('home');
+			$title = 'home';
 		}
 		else if($title == 'contact'){
-			$title = ucwords('contact');
+			$title = 'contact';
 		}
-		
-		return $title;
+
+		return $title = ucfirst($title);
 	}
 
 }
