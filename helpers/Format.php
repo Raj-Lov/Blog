@@ -26,11 +26,11 @@ class Format{
 		return $data;
 	}
 
-	// get page name for title
+	// get pages name to show in title bar // index page and contact page
 	public function getTitle(){
 		$path = $_SERVER['SCRIPT_FILENAME'];
 		$title = basename($path,'.php');
-		// $title = str_replace("_", " ", $title);
+		$title = str_replace("_", " ", $title);
 		if($title == 'index'){
 			$title = 'home';
 		}
@@ -38,7 +38,7 @@ class Format{
 			$title = 'contact';
 		}
 
-		return $title = ucfirst($title);
+		return $title = ucwords($title);
 	}
 
 }

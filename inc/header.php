@@ -15,6 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <?php 
+  // Retrieve page names to show in title bar from database by page id
     if (isset($_GET['page'])) {
       $pagetitle = $_GET['page'];
       
@@ -28,6 +29,7 @@
   <?php
       }
     }
+    // Get post heading to show in title bar
     else if(isset($_GET['id'])){
       $postid = $_GET['id'];
       $query = "SELECT * FROM tbl_posts WHERE id = '$postid' ";
@@ -41,6 +43,7 @@
       }
     }
     else{
+      // calling getTitle() method to show page title with title modify  . 
       if ($formatObj->getTitle() == TRUE) {
         ?>
   <title><?php echo $formatObj->getTitle();?> - <?php echo TITLE; ?></title>
@@ -69,7 +72,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <?php
-            // retrieve site title , slogan and logo from database
+            // retrieve site logo , site title and slogan database
             $query = "SELECT * FROM tbl_site_titles WHERE id = '1' ";
             $get_data = $dbObj->select($query);
             if ($get_data) {
