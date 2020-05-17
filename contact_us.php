@@ -35,7 +35,7 @@
           $subject = $dbObj->link->real_escape_string($subject);
           $message = $dbObj->link->real_escape_string($message);
 
-          $error = "" ;
+          $error = $msg = "";
 
           if (empty($name)) {
             $error = "<span class='error'>Name shouldn't be empty!</span>";
@@ -54,7 +54,16 @@
             $error = "<span class='error'>Message shouldn't be empty!</span>";
           }
           else{
-            $msg = "Ok";
+            $query = "INSERT INTO tbl_contacts(name, email, subject, message) VALUES( '$name','$email','$subject','$message') " ;
+              $inserted_rows = $dbObj->create($query);
+              if ($inserted_rows) {
+                $msg = "<span class='success'>Message sent successfully!
+               </span>";
+              }
+              else{
+                $error = "<span class='error'>Message sending failed!.
+               </span>";
+              }
           }
 
         }
@@ -84,7 +93,7 @@
           </div>
         </div>
         <div class="col-md-8 col-lg-9">
-          <form action="" class="form-contact contact_form" method="post">
+          <form action="" class="form-contact contact_form" method="POST">
             <?php 
               if(isset($error)){
                 echo $error;
