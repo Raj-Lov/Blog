@@ -22,35 +22,43 @@
   <!-- ================ contact section start ================= -->
   <section class="section-margin--small section-margin">
     <div class="container">
-      <div class="d-none d-sm-block mb-5 pb-4">
-        <div id="map" style="height: 420px;"></div>
-        <script>
-          function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
-            var grayStyles = [
-              {
-                featureType: "all",
-                stylers: [
-                  { saturation: -90 },
-                  { lightness: 50 }
-                ]
-              },
-              {elementType: 'labels.text.fill', stylers: [{color: '#A3A3A3'}]}
-            ];
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: -31.197, lng: 150.744},
-              zoom: 9,
-              styles: grayStyles,
-              scrollwheel:  false
-            });
+      <?php
+        // send message process starts
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          $name = $formatObj->validation($_POST['name']); 
+          $email = $formatObj->validation($_POST['email']); 
+          $subject = $formatObj->validation($_POST['subject']); 
+          $message = $formatObj->validation($_POST['message']); 
+
+          $name = $dbObj->link->real_escape_string($name);
+          $email = $dbObj->link->real_escape_string($email);
+          $subject = $dbObj->link->real_escape_string($subject);
+          $message = $dbObj->link->real_escape_string($message);
+
+          $error = "" ;
+
+          if (empty($name)) {
+            $error = "<span class='error'>Name shouldn't be empty!</span>";
           }
-          
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
-        
-      </div>
+          elseif (empty($email)) {
+            $error = "<span class='error'>Email shouldn't be empty!</span>";   
+          }
+          else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $error = "<span class='error'>Invalid email address!</span>";
+            // Remove all illegal characters from email
+          }
+          elseif (empty($subject)) {
+            $error = "<span class='error'>Subject shouldn't be empty!</span>";
+          }
+          elseif (empty($message)) {
+            $error = "<span class='error'>Message shouldn't be empty!</span>";
+          }
+          else{
+            $msg = "Ok";
+          }
 
-
+        }
+      ?>
       <div class="row">
         <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
           <div class="media contact-info">
@@ -76,14 +84,24 @@
           </div>
         </div>
         <div class="col-md-8 col-lg-9">
-          <form action="#/" class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+          <form action="" class="form-contact contact_form" method="post">
+            <?php 
+              if(isset($error)){
+                echo $error;
+              } 
+              if(isset($msg)){
+                echo $msg;
+              }
+
+            ?>
+
             <div class="row">
               <div class="col-lg-5">
                 <div class="form-group">
                   <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                  <input class="form-control" name="email" id="email" placeholder="Enter email address">
                 </div>
                 <div class="form-group">
                   <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
@@ -100,7 +118,36 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> <br> <hr> <br>
+
+      
+        <div class="d-none d-sm-block mb-5 pb-4">
+          <div id="map" style="height: 420px;"></div>
+          <script>
+            function initMap() {
+              var uluru = {lat: -25.363, lng: 131.044};
+              var grayStyles = [
+                {
+                  featureType: "all",
+                  stylers: [
+                    { saturation: -90 },
+                    { lightness: 50 }
+                  ]
+                },
+                {elementType: 'labels.text.fill', stylers: [{color: '#A3A3A3'}]}
+              ];
+              var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -31.197, lng: 150.744},
+                zoom: 9,
+                styles: grayStyles,
+                scrollwheel:  false
+              });
+            }
+            
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+          
+        </div>
     </div>
   </section>
 	<!-- ================ contact section end ================= -->
