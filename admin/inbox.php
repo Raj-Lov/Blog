@@ -19,9 +19,30 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
+                
+                <!-- Delete message query -->
+                <?php
+                    if (isset($_GET['deleteid'])) {
+                        $deleteid = $_GET['deleteid'];
+                        
+                        $query = "DELETE FROM tbl_contacts WHERE id = '$deleteid'";
+                        $delete_message = $dbObj->update($query);
+                        if ($delete_message) {
+                            echo "<span class='success'> Messege deleted successfully! </span>";
+                            
+                        }
+                        else{
+                            echo "<span class='error'> Messege delete failed! </span>";
+
+                        }
+
+                    }
+
+                ?>
+                
+
 
                 <!-- Update seen message status Move message to seen box -->
-
                 <?php
 
                     if (isset($_GET['seen_message'])) {
@@ -35,6 +56,23 @@
                         }
                         else{
                             echo "<span class='error'> Messege failed to move seen box! </span>";
+
+                        }
+
+                    }
+
+                    // Update status , message move from seen to unseen message
+                    if (isset($_GET['unseenid'])) {
+                        $unseenid = $_GET['unseenid'];
+                        
+                        $query = "UPDATE tbl_contacts SET status = '0' WHERE id = '$unseenid'";
+                        $update_status = $dbObj->update($query);
+                        if ($update_status) {
+                            echo "<span class='success'> Messege moved to unseen box! </span>";
+                            
+                        }
+                        else{
+                            echo "<span class='error'> Messege failed to move unseen box! </span>";
 
                         }
 
@@ -62,6 +100,7 @@
                                     </thead>
                                     <tbody>
                                     <?php
+                                    // Get all data from contacts table which status is 0
                                     $query="SELECT * FROM tbl_contacts WHERE status = 0 ORDER BY id DESC";
                                     $get_messages = $dbObj->select($query);
                                     $i = 1;
@@ -75,7 +114,11 @@
                                             <td><?php echo $result['email'];?></td>
                                             <td><?php echo $formatObj->postBodyShorten($result['message'],30);?></td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
-                                            <td><a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | <a class="text-info" href="replymessage.php?msgid=<?php echo $result['id'];?>">Reply</a> | <a onclick="return confirm('Are you want move this as seen message?');" class="text-success" href="?seen_message=<?php echo $result['id'];?>">Mark as read</a></td>
+                                            <td>
+                                                <a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | 
+                                                <a class="text-info" href="replymessage.php?msgid=<?php echo $result['id'];?>">Reply</a> | 
+                                                <a onclick="return confirm('Are you want move this as seen message?');" class="text-success" href="?seen_message=<?php echo $result['id'];?>">Mark as read</a>
+                                            </td>
                                         </tr>
                                     <?php
 
@@ -117,6 +160,7 @@
                                     </thead>
                                     <tbody>
                                     <?php
+                                    // Get all data from contacts table which status is 1
                                     $query="SELECT * FROM tbl_contacts WHERE status = 1 ORDER BY id DESC";
                                     $get_messages = $dbObj->select($query);
                                     $i = 1;
@@ -130,8 +174,13 @@
                                             <td><?php echo $result['email'];?></td>
                                             <td><?php echo $formatObj->postBodyShorten($result['message'],30);?></td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
-                                            <td><a onclick="return confirm('Are you sure want to delete this message?');" class="text-danger" href="viewmessage.php?msgid=<?php echo $result['id'];?>">Delete</a>
-                                        </tr>
+                                            <td>
+                                                <a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | 
+
+                                                <a onclick="return confirm('Are you sure want to move this as unseen message?');" class="text-warning" href="?unseenid=<?php echo $result['id'];?>">Mark as unseen</a> | 
+
+                                                <a onclick="return confirm('Are you sure want to delete this message?');" class="text-danger" href="?deleteid=<?php echo $result['id'];?>">Delete</a>
+                                            </tr>
                                     <?php
 
                                         }
