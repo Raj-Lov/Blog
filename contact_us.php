@@ -49,6 +49,10 @@
             $emailerror = "<span class='error'>Email shouldn't be empty!</span>"; 
             $validate = false ;
           }
+          else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            $emailerror = "<span class='error'>Invalid email input!</span>";
+            $validate = false;
+          }
           else{
             $email ;
           }
