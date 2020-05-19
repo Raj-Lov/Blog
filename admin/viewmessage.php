@@ -1,6 +1,19 @@
 <?php include_once 'inc/header.php' ;?>
 <?php include_once 'inc/sidebar.php' ;?>
+<?php
 
+    if (!isset($_GET['msgid']) || $_GET['msgid']==NULL) {
+        echo "<script>window.location = 'inbox.php';</script>";
+    }
+    else{
+        $msgid = $_GET['msgid'];
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        echo "<script>window.location.href = 'inbox.php';</script>";
+    }
+
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -8,20 +21,7 @@
         <h1>
             View Message
         </h1>
-        <?php
 
-            if (!isset($_GET['msgid']) || $_GET['msgid'] == NULL) {
-                echo "<script>window.location('inbox.php');</script>";
-            }
-            else{
-                $msgid = $_GET['msgid'];
-            }
-
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo "<script>window.location('inbox.php');</script>";              
-            }
-
-        ?>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Dashboard</li>
@@ -41,10 +41,9 @@
                         if ($get_msg) {
                             while ($result = $get_msg->fetch_assoc()) {
                                 
-                           
                     ?>
 
-                    <form action="" method="post">
+                    <form action="" method="POST">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">Name</label>
