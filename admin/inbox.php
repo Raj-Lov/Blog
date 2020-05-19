@@ -53,7 +53,7 @@
                                         <td><?php echo $result['email'];?></td>
                                         <td><?php echo $formatObj->postBodyShorten($result['message'],30);?></td>
                                         <td><?php echo $formatObj->dateFormat($result['date']);?></td>
-                                        <td><a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | <a class="text-warning" href="replymessage.php?msgid=<?php echo $result['id'];?>">Reply</a> | <a class="text-success" href="?seen_message=<?php echo $result['id'];?>">Mark as read</a></td>
+                                        <td><a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | <a class="text-info" href="replymessage.php?msgid=<?php echo $result['id'];?>">Reply</a> | <a class="text-success" href="?seen_message=<?php echo $result['id'];?>">Mark as read</a></td>
                                     </tr>
                                 <?php
 
