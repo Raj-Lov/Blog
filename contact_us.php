@@ -35,36 +35,49 @@
           $subject = $dbObj->link->real_escape_string($subject);
           $message = $dbObj->link->real_escape_string($message);
 
-          $error = $msg = "";
+          $nameerror = $emailerror = $subjecterror = $messageerror = $success_message = "";
+          $validate = true ;
 
           if (empty($name)) {
-            $error = "<span class='error'>Name shouldn't be empty!</span>";
-          }
-          elseif (empty($email)) {
-            $error = "<span class='error'>Email shouldn't be empty!</span>";   
-          }
-          else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $error = "<span class='error'>Invalid email address!</span>";
-            // Remove all illegal characters from email
-          }
-          elseif (empty($subject)) {
-            $error = "<span class='error'>Subject shouldn't be empty!</span>";
-          }
-          elseif (empty($message)) {
-            $error = "<span class='error'>Message shouldn't be empty!</span>";
+            $nameerror = "<span class='error'>Name shouldn't be empty!</span>";
+            $validate = false ;
           }
           else{
-            $query = "INSERT INTO tbl_contacts(name, email, subject, message) VALUES( '$name','$email','$subject','$message') " ;
+            $name ;
+          }
+          if (empty($email)) {
+            $emailerror = "<span class='error'>Email shouldn't be empty!</span>"; 
+            $validate = false ;
+          }
+          else{
+            $email ;
+          }
+          if (empty($subject)) {
+            $subjecterror = "<span class='error'>Subject shouldn't be empty!</span>";
+            $validate = false ;
+          }
+          else{
+            $subject ;
+          }
+          if (empty($message)) {
+            $messageerror = "<span class='error'>Message shouldn't be empty!</span>";
+            $validate = false ;
+          }
+          else if($validate == true ){
+            $query = "INSERT INTO tbl_contacts(name, email, subject, message) VALUES( '$name','$email','$subject','$message') ";
               $inserted_rows = $dbObj->create($query);
               if ($inserted_rows) {
-                $msg = "<span class='success'>Message sent successfully!
+                $success_message = "<span class='success'>Message sent successfully!
                </span>";
+               $name = $email = $subject = $message = "" ;
               }
               else{
                 $error = "<span class='error'>Message sending failed!.
                </span>";
               }
+        
           }
+          
 
         }
       ?>
@@ -94,31 +107,32 @@
         </div>
         <div class="col-md-8 col-lg-9">
           <form action="" class="form-contact contact_form" method="POST">
-            <?php 
-              if(isset($error)){
-                echo $error;
-              } 
-              if(isset($msg)){
-                echo $msg;
-              }
-
-            ?>
-
             <div class="row">
               <div class="col-lg-5">
                 <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                  <input value="<?php if (isset($name)){echo $name;} {
+                    # code...
+                  }?>" class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                  <?php if(isset($nameerror)){ echo $nameerror; } ?>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="email" id="email" placeholder="Enter email address">
+                  <input value="<?php if (isset($email)){echo $email;} {
+                    # code...
+                  }?>" class="form-control" name="email" id="email" placeholder="Enter email address">
+                  <?php if(isset($emailerror)){ echo $emailerror; } ?>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                  <input value="<?php if (isset($subject)){echo $subject;} {
+                    # code...
+                  }?>" class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                  <?php if(isset($subjecterror)){ echo $subjecterror; } ?>
                 </div>
               </div>
               <div class="col-lg-7">
                 <div class="form-group">
                     <textarea class="form-control different-control w-100" name="message" id="message" cols="30" rows="5" placeholder="Enter Message"></textarea>
+                    <?php if(isset($messageerror)){ echo $messageerror; } ?>
+                    <?php if(isset($success_message)){ echo $success_message; } ?>
                 </div>
               </div>
             </div>
