@@ -112,7 +112,7 @@
                                             <td><?php echo $i++;?></td>
                                             <td><?php echo $result['name'];?></td>
                                             <td><?php echo $result['email'];?></td>
-                                            <td><?php echo $formatObj->postBodyShorten($result['message'],30);?></td>
+                                            <td><?php echo $formatObj->postBodyShorten($result['message'],40);?></td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
                                             <td>
                                                 <a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | 
@@ -172,7 +172,7 @@
                                             <td><?php echo $i++;?></td>
                                             <td><?php echo $result['name'];?></td>
                                             <td><?php echo $result['email'];?></td>
-                                            <td><?php echo $formatObj->postBodyShorten($result['message'],30);?></td>
+                                            <td><?php echo $formatObj->postBodyShorten($result['message'],80);?></td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
                                             <td>
                                                 <a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | 

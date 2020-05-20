@@ -65,54 +65,56 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
+          <!-- messages menu area started -->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">
-                <?php
+            </a>
+              <?php
                   $query = "SELECT * FROM tbl_contacts WHERE status = 0 ORDER BY id DESC";
                   $get_data = $dbObj->select($query);
-                  if ($get_data) {
+                  if ($get_data && $get_data->num_rows > 0) {
                     $total_message = $get_data->num_rows;
-                    echo $total_message;
                     
-                    // echo "<pre>";
-                    // print_r($result);
-                    // echo "</pre>";
-
                 ?>
-
-              </span>
-            </a>
+              <span class="label label-success"> <?php echo $total_message; ?> </span>
+            
             <ul class="dropdown-menu">
               <li class="header">You have <?php echo $total_message; ?> messages</li>
+
               <?php 
 
-              while ($result = $get_data->fetch_assoc()) {
+                while ($result = $get_data->fetch_assoc()) {
 
                 ?>
-              <li><ul class="menu">
+              <li>
+                <ul class="menu">
                   <li><!-- start message -->
                     <a href="viewmessage.php?msgid=<?php echo $result['id']?>">
-                      <h4>
-                        <?php echo $result['name']?>
+                      <h5>
+                        <?php echo $formatObj->postBodyShorten($result['name'],20) ;?>
                         <small><i class="fa fa-clock-o"></i><?php echo $formatObj->dateFormat($result['date']);?></small>
-                      </h4>
-                      <p><?php echo $result['subject']?></p>
+                      </h5>
+                      <p><?php echo $formatObj->postBodyShorten($result['subject'],50) ;?></p>
                     </a>
                   </li>
                 </ul>
               </li>
-
-              <?php
-                  }
-                }
-
-              ?>
-
+               <?php
+                  } // end of while loop 
+                ?>
               <li class="footer"><a href="inbox.php">See All Messages</a></li>
-            </ul>
+              </ul>
+              <?php 
+                }
+                else{
+                  echo $nomessage = "<span class='label label-success'>0</span>";
+                }
+              ?>
           </li>
+
+             
+          <!-- messages menu area finished -->
 
           
           <!-- User Account: style can be found in dropdown.less -->
@@ -123,21 +125,10 @@
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <li class="user-header text-center">
+                <img src="dist/img/user2-160x160.jpg" class=" img-circle" alt="User Image">
+                <h4 class="text-center"> Alexander Pierce</h4>
 
-                <p>
-                  Alexander Pierce - Web Developer
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-12 text-center">
-                    <a href="changepassword.php">Change Password</a>
-                  </div>
-                </div>
-                <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -150,6 +141,7 @@
               </li>
             </ul>
           </li>
+          
         </ul>
       </div>
     </nav>
