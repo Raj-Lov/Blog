@@ -4994,3 +4994,18 @@ table.text-center th {
   display: inline-block;
   padding: 0 0 0 5px;
 }
+
+/*header message bar css*/
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 {
+  margin: 0 0 0 10px;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p {
+  margin: 0 0 0 10px;
+}
+.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 > small {
+  color: #999999;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}

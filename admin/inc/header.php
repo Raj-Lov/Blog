@@ -68,79 +68,53 @@
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success">
+                <?php
+                  $query = "SELECT * FROM tbl_contacts WHERE status = 0 ORDER BY id DESC";
+                  $get_data = $dbObj->select($query);
+                  if ($get_data) {
+                    $total_message = $get_data->num_rows;
+                    echo $total_message;
+                    
+                    // echo "<pre>";
+                    // print_r($result);
+                    // echo "</pre>";
+
+                ?>
+
+              </span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
+              <li class="header">You have <?php echo $total_message; ?> messages</li>
+              <?php 
+
+              while ($result = $get_data->fetch_assoc()) {
+
+                ?>
+              <li><ul class="menu">
                   <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
+                    <a href="viewmessage.php?msgid=<?php echo $result['id']?>">
                       <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        <?php echo $result['name']?>
+                        <small><i class="fa fa-clock-o"></i><?php echo $formatObj->dateFormat($result['date']);?></small>
                       </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
+                      <p><?php echo $result['subject']?></p>
                     </a>
                   </li>
                 </ul>
               </li>
+
+              <?php
+                  }
+                }
+
+              ?>
+
               <li class="footer"><a href="inbox.php">See All Messages</a></li>
             </ul>
           </li>
+
+          
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

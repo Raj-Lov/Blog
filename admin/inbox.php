@@ -177,7 +177,7 @@
                                             <td>
                                                 <a class="text-primary" href="viewmessage.php?msgid=<?php echo $result['id'];?>">View</a> | 
 
-                                                <a onclick="return confirm('Are you sure want to move this as unseen message?');" class="text-warning" href="?unseenid=<?php echo $result['id'];?>">Mark as unseen</a> | 
+                                                <a onclick="return confirm('Are you sure want to move this as unseen message?');" class="text-warning" href="?unseenid=<?php echo $result['id'];?>">Mark as unread</a> | 
 
                                                 <a onclick="return confirm('Are you sure want to delete this message?');" class="text-danger" href="?deleteid=<?php echo $result['id'];?>">Delete</a>
                                             </tr>
@@ -197,13 +197,7 @@
                 <!-- /.box -->
             </div>
 
-            </div>
-
         </section>
-
-
-            
-
 
         <!-- /.content -->
     </div>
