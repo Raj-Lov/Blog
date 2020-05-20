@@ -53,6 +53,28 @@
     }
 
   ?>
+  
+  <?php
+    if (isset($_GET['id'])) {
+      $postid = $_GET['id'];
+      
+      $query = "SELECT * FROM tbl_posts WHERE id = '$postid' ";
+      $get_data = $dbObj->select($query);
+      if ($get_data) {
+        $result = $get_data->fetch_assoc();
+    
+  ?>
+  <meta name="keyword" content="<?php echo $result['tags'] ;?>">
+  <?php
+      }
+    }
+    else{
+      ?>
+  <meta name="keyword" content="<?php echo KEYWORD ;?>">
+  <?php
+    }
+  ?>
+  <meta name="description" content="<?php echo DESCRIPTION; ?>">
 
 	<link rel="icon" href="img/Fevicon.png" type="image/png">
 
