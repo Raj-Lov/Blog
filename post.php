@@ -46,16 +46,6 @@
             <img width="100%" height="300" class="img-responsive" src="admin/<?php echo $result['image']?>" alt="Post image">
             <a href="#"><h4><?php echo $result['title']?></h4></a>
             <div class="user_details">
-              <div class="float-left tags">
-                <!--<?php 
-                  for ($i=1; $i < 2 ; $i++) { 
-                    echo "<a href='#'>" .$result['tags']. "</a>" ; 
-                  }
-                ?>
-                -->
-                <a href="#">Tags Here</a>
-
-              </div>
               <div class="float-right mt-sm-0 mt-3">
                 <div class="media">
                   <div class="media-body">
