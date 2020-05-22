@@ -56,7 +56,7 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                    $query = "SELECT * FROM tbl_categories ORDER BY id DESC";
+                                    $query = "SELECT * FROM tbl_categories ORDER BY id ASC";
                                     $categories = $dbObj->select($query);
                                     if($categories){
                                         $i = 0;

@@ -24,23 +24,37 @@
                     <!-- form start -->
                 <?php
                   if(isset($_POST['save'])){
-                    $name = $_POST['name'];
-                    $name = $formatObj->validation($name);
-                    
+                    $name = $formatObj->validation($_POST['name']);
+
+                    // mysqli_real_escape_string removes special character like --> 
+                    // \n, \r, \, '', "", And Characters encoded/returns are NUL (ASCII 0)
+                    // It returns empty/null value .  
                     $name = $dbObj->link->real_escape_string($name); 
 
                     if (empty($name)) {
                         echo "<span class='error'> Category field must not be empty! </span>";
                     }
                     else{
-                        $query="INSERT INTO tbl_categories(name) VALUES('$name')";
-                        $insert = $dbObj->create($query);
-                        if ($insert) {
-                            echo "<span class='success'> Category saved successfully! </span>";
+                        $checkQuery = "SELECT * FROM tbl_categories WHERE name = '$name'";
+                        $checkCatExist = $dbObj->select($checkQuery);
+                        if ($checkCatExist) {
+                            if ($checkCatExist->num_rows > 0) {
+                                echo "<span class='error'> Category name already exist, Try another one! </span>";
+                            }
+                            
                         }
                         else{
-                            echo "<span class='error'> Category not saved! </span>";
+                            $query="INSERT INTO tbl_categories(name) VALUES('$name')";
+                            $insert = $dbObj->create($query);
+                            if ($insert) {
+                                echo "<span class='success'> Category saved successfully! </span>";
+                            }
+                            else{
+                                echo "<span class='error'> Category not saved! </span>";
+                            }
                         }
+
+                        
                     }
 
                     

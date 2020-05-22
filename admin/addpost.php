@@ -12,7 +12,7 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $title = $formatObj->validation($_POST['title']);
                 $cat_id = $formatObj->validation($_POST['cat_id']);
-                $body = $formatObj->validation($_POST['body']);
+                $body = $_POST['body'];
                 $tags = $formatObj->validation($_POST['tags']);
                 $author = $formatObj->validation($_POST['author']);
 
@@ -27,10 +27,12 @@
                 $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
                 $uploaded_image = "upload/".$unique_image;
 
-                // for protect to sql injection 
+                // mysqli_real_escape_string removes special character like --> 
+                // \n, \r, \, '', "", And Characters encoded/returns are NUL (ASCII 0)
+                // It returns empty/null value .  
                 $title = $dbObj->link->real_escape_string($title);
                 $cat_id = $dbObj->link->real_escape_string($cat_id);
-                $body = $dbObj->link->real_escape_string($body);
+                // $body = $dbObj->link->real_escape_string($body);
                 $tags = $dbObj->link->real_escape_string($tags);
                 $author = $dbObj->link->real_escape_string($author); 
 

@@ -38,12 +38,14 @@
                 $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
                 $uploaded_image = "upload/".$unique_image;
 
-                // for protect to sql injection 
-                $title = $dbObj->link->real_escape_string($_POST['title']);
-                $cat_id = $dbObj->link->real_escape_string($_POST['cat_id']);
-                $body = $dbObj->link->real_escape_string($_POST['body']);
-                $tags = $dbObj->link->real_escape_string($_POST['tags']);
-                $author = $dbObj->link->real_escape_string($_POST['author']); 
+                // mysqli_real_escape_string removes special character like --> 
+                // \n, \r, \, '', "", And Characters encoded/returns are NUL (ASCII 0)
+                // It returns empty/null value .  
+                $title = $dbObj->link->real_escape_string($title);
+                $cat_id = $dbObj->link->real_escape_string($cat_id);
+                $body = $dbObj->link->real_escape_string($body);
+                $tags = $dbObj->link->real_escape_string($tags);
+                $author = $dbObj->link->real_escape_string($author); 
 
                 // Update procedure starts here
                 // If all fields are empty excepts image field, then show an error.
