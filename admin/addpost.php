@@ -28,11 +28,11 @@
                 $uploaded_image = "upload/".$unique_image;
 
                 // for protect to sql injection 
-                $title = $dbObj->link->real_escape_string($_POST['title']);
-                $cat_id = $dbObj->link->real_escape_string($_POST['cat_id']);
-                $body = $dbObj->link->real_escape_string($_POST['body']);
-                $tags = $dbObj->link->real_escape_string($_POST['tags']);
-                $author = $dbObj->link->real_escape_string($_POST['author']); 
+                $title = $dbObj->link->real_escape_string($title);
+                $cat_id = $dbObj->link->real_escape_string($cat_id);
+                $body = $dbObj->link->real_escape_string($body);
+                $tags = $dbObj->link->real_escape_string($tags);
+                $author = $dbObj->link->real_escape_string($author); 
 
                 if (empty($title) || empty($cat_id) || empty($body) || empty($file_name) || empty($tags) || empty($author) ) {
                     echo "<span class='error'> Field must not be empty! </span>";
