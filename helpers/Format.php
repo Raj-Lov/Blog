@@ -20,6 +20,9 @@ class Format{
 
 	// validation
 	public function validation($data){
+		// trim() removes white spaces from string . before and after
+		// stripslashes() removes \ backslash from string .
+		// htmlspecialchars() removes special characters like <, >, &, '', "",  from string . and returns html entity like &amp , &lt, &gt;
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);

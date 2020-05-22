@@ -82,6 +82,20 @@
             <li><a href="viewpost.php"><i class="fa fa-square"></i> View Posts</a></li>
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>User Option</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="adduser.php"><i class="fa fa-plus"></i> Add User</a></li>
+            <li><a href="viewuser.php"><i class="fa fa-square"></i> View Users</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
