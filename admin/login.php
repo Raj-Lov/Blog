@@ -70,8 +70,11 @@
             // checking if any row found then set in session and redirect
           if ($row > 0) {
             Session::set("login",true);
-            Session::set("username",$value['username']);
             Session::set("userId",$value['id']);
+            Session::set("username",$value['username']);
+            Session::set("fullname",$value['name']);
+            Session::set("image",$value['image']);
+            Session::set("userRole",$value['role']);
             header("location: index.php");
           }
           else{

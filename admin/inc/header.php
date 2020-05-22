@@ -17,6 +17,10 @@
   }
 
 ?>
+<?php
+    $userId   = Session::get('userId');
+    $userRole = Session::get('userRole');
+?>
 
 <!DOCTYPE html>
 <html>
@@ -121,14 +125,39 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <?php
+                $query = "SELECT * FROM tbl_users WHERE id = '$userId' ";
+                $get_data = $dbObj->select($query);
+                if ($get_data) {
+                  $result = $get_data->fetch_assoc();
+                
+              ?>
+              <img src="<?php echo $result['image'];?>" class="user-image" alt="No Image">
+              <?php
+                }
+
+                ?>
+
+              <span class="hidden-xs"><?php echo Session::get('username');?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header text-center">
-                <img src="dist/img/user2-160x160.jpg" class=" img-circle" alt="User Image">
-                <h4 class="text-center"> Alexander Pierce</h4>
+                <?php
+                  $query = "SELECT * FROM tbl_users WHERE id = '$userId' ";
+                  $get_data = $dbObj->select($query);
+                  if ($get_data) {
+                    $result = $get_data->fetch_assoc();
+                
+                ?>
+                <img src="<?php echo $result['image'];?>" class=" img-circle" alt="No Image">
+
+                <?php
+                  }
+
+                ?>
+
+                <h4 class="text-center"><?php echo Session::get('fullname');?></h4>
 
               </li>
               <!-- Menu Footer-->

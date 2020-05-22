@@ -1,13 +1,27 @@
+
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <?php
+            $query = "SELECT * FROM tbl_users WHERE id = '$userId' ";
+            $get_data = $dbObj->select($query);
+            if ($get_data) {
+              $result = $get_data->fetch_assoc();
+          
+          ?>
+          <img src="<?php echo $result['image'];?>" class="img-circle" alt="No Image">
+
+          <?php
+
+            }
+
+            ?>
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo Session::get('fullname');?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>

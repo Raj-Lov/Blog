@@ -11,7 +11,7 @@
         <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
 
-                $username = $formatObj->validation($_POST['username']);
+                $username = strtolower($formatObj->validation($_POST['username']));
                 $password = $formatObj->validation($_POST['password']);
                 $role     = $formatObj->validation($_POST['role']);
 
