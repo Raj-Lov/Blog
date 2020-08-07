@@ -107,7 +107,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="adduser.php"><i class="fa fa-plus"></i> Add User</a></li>
-            <li><a href="viewuser.php"><i class="fa fa-square"></i> View Users</a></li>
+            <li><a href="viewusers.php"><i class="fa fa-square"></i> View Users</a></li>
           </ul>
         </li>
       </ul>

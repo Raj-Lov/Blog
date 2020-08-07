@@ -28,7 +28,7 @@
                 $div = explode('.', $file_name);
                 $file_ext = strtolower(end($div));
                 $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
-                $uploaded_image = "upload/author/".$unique_image;
+                $uploaded_image = "upload/users/".$unique_image;
 
                 // mysqli_real_escape_string removes special character like --> 
                 // \n, \r, \, '', "", And Characters encoded/returns are NUL (ASCII 0)

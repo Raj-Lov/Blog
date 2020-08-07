@@ -72,7 +72,7 @@
           <!-- Messages: style can be found in dropdown.less-->
           <!-- messages menu area started -->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
             </a>
               <?php
@@ -90,7 +90,7 @@
               <?php 
 
                 while ($result = $get_data->fetch_assoc()) {
-
+                  
                 ?>
               <li>
                 <ul class="menu">
