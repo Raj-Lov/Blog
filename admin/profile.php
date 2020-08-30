@@ -27,6 +27,7 @@
 
                 $div = explode('.', $file_name);
                 $file_ext = strtolower(end($div));
+
                 $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
                 $uploaded_image = "upload/users/".$unique_image;
 
@@ -65,8 +66,9 @@
                             }
                         }
                     }
+                    // if file image field is empty
                     else{
-                        $query = "UPDATE tbl_users SET name = '$name' , email = '$email' , details = '$details' , image = '$uploaded_image' WHERE id = '$userId' " ;
+                        $query = "UPDATE tbl_users SET name = '$name' , email = '$email' , details = '$details' WHERE id = '$userId' " ;
                         $updated_row = $dbObj->update($query);
                         if ($updated_row) {
                          echo "<span class='success'>Profile Updated Successfully!
@@ -83,7 +85,7 @@
         ?>
 
         <?php
-            $query = "SELECT * FROM tbl_users WHERE id = '$userId' AND role = '$userRole' ";
+            $query = "SELECT * FROM tbl_users WHERE id = '$userId' AND role = '$userRole'";
             $get_data = $dbObj->select($query);
             if($get_data){
 

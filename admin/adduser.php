@@ -77,7 +77,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="select">Category</label>
-                                <select  name="role" id="select" class="form-control">
+                                <select required="" name="role" id="select" class="form-control">
                                     <option value="">-- Select User Role --</option>
                                     <option value="1">Admin</option>
                                     <option value="2">Editor</option>
