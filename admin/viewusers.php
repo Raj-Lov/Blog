@@ -20,6 +20,29 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
+
+        <!-- User Delete Process Starts here -->
+
+        <?php
+
+            if (!isset($_GET['delete_user']) || $_GET['delete_user'] == NULL) {
+                echo "<script>window.location('viewusers.php');</script>";
+            }
+            else{
+                $del_id = $_GET['delete_user'];
+
+                // Delete from local directory, process starts here
+                $query = "DELETE FROM tbl_users WHERE id = '$del_id' " ;
+                $result = $dbObj->delete($query);
+                if($result){
+                  echo "<span class='success'>User deleted Successfully!</span>";
+                }
+                else{
+                    echo "<span class='error'>User deleted Failed!</span>";
+                }
+            }
+
+        ?>
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box">
@@ -84,7 +107,7 @@
                                                 ?>
                                             </td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
-                                            <td><a href="edit_user.php?id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this User?');" href="delete_user.php?delete_id=<?php echo $result['id']?>">Delete</a></td>
+                                            <td><a href="edit_user.php?id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this User?');" href="?delete_user=<?php echo $result['id']?>">Delete</a></td>
                                         </tr>
 
                                         <?php

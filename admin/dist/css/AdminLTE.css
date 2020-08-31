@@ -4982,17 +4982,24 @@ table.text-center th {
 /* My custom css */
 
 
-.success{
-  color: #018001;
-  margin: 10px 0;
-  display: inline-block;
-  padding: 0 0 0 5px;
+.success {
+    color: #fff;
+    margin: 10px 0;
+    display: block;
+    background: green;
+    padding: 10px 20px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
 }
+
 .error {
-  color: #fd0000;
-  margin: 10px 0;
-  display: inline-block;
-  padding: 0 0 0 5px;
+    color: #fff;
+    margin: 10px 0;
+    display: block;
+    background: red;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
 }
 
 /*header message bar css*/
