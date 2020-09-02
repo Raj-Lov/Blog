@@ -107,7 +107,8 @@
                                                 ?>
                                             </td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
-                                            <td><a href="edit_user.php?id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this User?');" href="?delete_user=<?php echo $result['id']?>">Delete</a></td>
+                                            
+                                            <td><a href="viewuser.php?user_id=<?php echo $result['id']?>">View</a> | <a onclick="return confirm('Are you sure to Delete this User?');" href="?delete_user=<?php echo $result['id']?>">Delete</a></td>
                                         </tr>
 
                                         <?php
