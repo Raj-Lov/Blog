@@ -118,7 +118,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="tags">Author</label>
-                                <input type="text" name="author" class="form-control" id="title" placeholder="Enter Author Name">
+                                <input type="text" name="author" class="form-control" id="title" value="<?php echo Session::get("username") ;?>" placeholder="Enter Author Name">
                             </div>
                         </div>
                         <!-- /.box-body -->

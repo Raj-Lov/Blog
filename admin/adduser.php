@@ -1,6 +1,13 @@
 <?php include_once 'inc/header.php' ;?>
 <?php include_once 'inc/sidebar.php' ;?>
 
+<?php
+    // Only admin can access add new user page 
+    if (Session::get('userRole') != 1 ) {
+        echo "<script>location.href= 'index.php' ; </script>";
+    }
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

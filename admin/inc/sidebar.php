@@ -106,7 +106,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <!-- Only admin can add new user start -->
+            <?php if(Session::get('userRole') == 1 ){ ?>
             <li><a href="adduser.php"><i class="fa fa-plus"></i> Add User</a></li>
+            <?php } ?>
+            <!-- Only admin can add new user finish -->
+
             <li><a href="viewusers.php"><i class="fa fa-square"></i> View Users</a></li>
           </ul>
         </li>
