@@ -57,16 +57,19 @@
                                     ?>
                                         <tr>
                                             <td><?php echo $i;?></td>
-                                            <td><a href="editpost.php?edit_id=<?php echo $result['id']?>"><?php echo $result['title'];?></a></td>
+                                            <td><?php echo $result['title'];?></td>
                                             <td><?php echo $formatObj->postBodyShorten($result['body'],100);?></td>
                                             <td><?php echo $result['name'];?></td>
                                             <td><img width="50" height="50" src="<?php echo $result['image'];?>" /></td>
                                             <td><?php echo $result['author'];?></td>
                                             <td><?php echo $result['tags'];?></td>
                                             <td><?php echo $formatObj->dateFormat($result['date']);?></td>
+
+                                            <td>
+                                                <a href="postview.php?post_id=<?php echo $result['id']?>">View</a>  
                                             <!-- If role base post edit and delete -->
                                             <?php if(Session::get('userId') == $result['user_id'] || Session::get('userRole') == '1'){ ?>
-                                            <td><a href="editpost.php?edit_id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this Post?');" href="deletepost.php?delete_id=<?php echo $result['id']?>">Delete</a></td>
+                                            | <a href="editpost.php?edit_id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this Post?');" href="deletepost.php?delete_id=<?php echo $result['id']?>">Delete</a></td>
                                             <?php }?>
                                         </tr>
 
