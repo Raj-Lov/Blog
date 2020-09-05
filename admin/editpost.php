@@ -26,6 +26,7 @@
                 $body = $formatObj->validation($_POST['body']);
                 $tags = $formatObj->validation($_POST['tags']);
                 $author = $formatObj->validation($_POST['author']);
+                $user_id = $formatObj->validation($_POST['user_id']);
 
                 // for image upload
                 $permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -65,7 +66,7 @@
                         } 
                         else{
                             move_uploaded_file($file_temp, $uploaded_image);
-                            $query = "UPDATE tbl_posts SET cat_id = '$cat_id' , title = '$title' , body = '$body' , image = '$uploaded_image' , author = '$author' , tags ='$tags' WHERE id = '$edit_id' " ;
+                            $query = "UPDATE tbl_posts SET cat_id = '$cat_id' , title = '$title' , body = '$body' , image = '$uploaded_image' , author = '$author' , tags ='$tags', user_id = '$user_id' WHERE id = '$edit_id' " ;
                             $updated_row = $dbObj->update($query);
                             if ($updated_row) {
                              echo "<span class='success'>Post Updated Successfully!
@@ -80,7 +81,7 @@
 
                     // If image field is empty and other fileds are fields are filled with values then process here . 
                     else{
-                        $query = "UPDATE tbl_posts SET cat_id = '$cat_id' , title = '$title' , body = '$body' , author = '$author' , tags ='$tags' WHERE id = '$edit_id' " ;
+                        $query = "UPDATE tbl_posts SET cat_id = '$cat_id' , title = '$title' , body = '$body' , author = '$author' , tags ='$tags', user_id = '$user_id' WHERE id = '$edit_id' " ;
                         $updated_row = $dbObj->update($query);
                         if ($updated_row) {
                          echo "<span class='success'>Post Updated Successfully!
@@ -176,6 +177,8 @@
                             <div class="form-group">
                                 <label for="tags">Author</label>
                                 <input type="text" name="author" class="form-control" id="title" value="<?php echo $edit_result['author'];?>">
+
+                                <input type="hidden" name="user_id" value="<?php echo Session::get("userId") ;?>" >
                             </div>
                         </div>
                         <!-- /.box-body -->

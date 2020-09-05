@@ -15,6 +15,7 @@
                 $body = $_POST['body'];
                 $tags = $formatObj->validation($_POST['tags']);
                 $author = $formatObj->validation($_POST['author']);
+                $user_id = $formatObj->validation($_POST['user_id']);
 
                 // for image upload
                 $permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -47,7 +48,7 @@
                 } 
                 else{
                     move_uploaded_file($file_temp, $uploaded_image);
-                    $query = "INSERT INTO tbl_posts(cat_id, title, body, image, author, tags) VALUES('$cat_id', '$title', '$body','$uploaded_image','$author','$tags') " ;
+                    $query = "INSERT INTO tbl_posts(cat_id, title, body, image, author, tags, user_id) VALUES('$cat_id', '$title', '$body','$uploaded_image','$author','$tags', '$user_id') " ;
                     $inserted_rows = $dbObj->create($query);
                     if ($inserted_rows) {
                      echo "<span class='success'>Post Inserted Successfully!
@@ -119,6 +120,8 @@
                             <div class="form-group">
                                 <label for="tags">Author</label>
                                 <input type="text" name="author" class="form-control" id="title" value="<?php echo Session::get("username") ;?>" placeholder="Enter Author Name">
+
+                                <input type="hidden" name="user_id" value="<?php echo Session::get("userId") ;?>" >
                             </div>
                         </div>
                         <!-- /.box-body -->
