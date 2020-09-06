@@ -66,9 +66,7 @@
         // if result is true
         if($result != false){
             $value = $result->fetch_array();
-            $row = $result->num_rows;
-            // checking if any row found then set in session and redirect
-          if ($row > 0) {
+            
             Session::set("login",true);
             Session::set("userId",$value['id']);
             Session::set("username",$value['username']);
@@ -76,10 +74,7 @@
             Session::set("image",$value['image']);
             Session::set("userRole",$value['role']);
             header("location: index.php");
-          }
-          else{
-            echo "<span class='error'> No data found in database! </span>";
-          }
+          
         }
         else{
           echo "<span class='error'> Username or Password is not matched! </span>";
