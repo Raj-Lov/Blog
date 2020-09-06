@@ -20,6 +20,7 @@
 
                 $username = strtolower($formatObj->validation($_POST['username']));
                 $password = $formatObj->validation($_POST['password']);
+                $email    = $formatObj->validation($_POST['email']);
                 $role     = $formatObj->validation($_POST['role']);
 
             // mysqli_real_escape_string removes special character like --> 
@@ -27,23 +28,24 @@
             // It returns empty/null value .  
                 $username = $dbObj->link->real_escape_string($username);
                 $password = $dbObj->link->real_escape_string($password);
+                $email    = $dbObj->link->real_escape_string($email);
                 $role     = $dbObj->link->real_escape_string($role);
 
 
-                if (empty($username) || empty($password) || empty($role) ) {
+                if (empty($username) || empty($password) || empty($email) || empty($role) ) {
                     echo "<span class='error'> Field must not be empty! </span>";
                 }
                 else{
-                    $checkQuery = "SELECT * FROM tbl_users WHERE username = '$username'";
+                    $checkQuery = "SELECT * FROM tbl_users WHERE username = '$username' OR email = '$email' ";
                     $checkUserExist = $dbObj->select($checkQuery);
                     if ($checkUserExist) {
                         if ($checkUserExist->num_rows > 0) {
-                            echo "<span class='error'> Username already exist, Try another one! </span>";
+                            echo "<span class='error'> Username or Email already exist, Try another one! </span>";
                         }
                         
                     }
                     else{
-                        $query = "INSERT INTO tbl_users(username, password, role) VALUES('$username', '$password', '$role') ";
+                        $query = "INSERT INTO tbl_users(username, password, email, role) VALUES('$username', '$password', '$email', '$role') ";
                         $inserted_rows = $dbObj->create($query);
                         if ($inserted_rows) {
                          echo "<span class='success'>User Created Successfully!
@@ -81,6 +83,10 @@
                             <div class="form-group">
                                 <label for="password">Passwrod</label>
                                 <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter valid email">
                             </div>
                             <div class="form-group">
                                 <label for="select">Category</label>
