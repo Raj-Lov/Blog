@@ -132,7 +132,13 @@
                   $result = $get_data->fetch_assoc();
                 
               ?>
-              <img src="<?php echo $result['image'];?>" class="user-image" alt="No Image">
+
+                <?php if($result['image']) { ?>
+                  <img class="user-image" src="<?php echo $result['image'];?>" name="image" width="60" /> 
+                <?php } else { ?>
+                  <img class="user-image" src="upload/users/noimage.png" name="image" width="60" /> 
+                <?php }  ?>
+
               <?php
                 }
 
@@ -150,7 +156,12 @@
                     $result = $get_data->fetch_assoc();
                 
                 ?>
-                <img src="<?php echo $result['image'];?>" class=" img-circle" alt="No Image">
+                
+                <?php if($result['image']) { ?>
+                  <img class="user-image" src="<?php echo $result['image'];?>" name="image" width="150" /> 
+                <?php } else { ?>
+                  <img class="user-image" src="upload/users/noimage.png" name="image" width="150" /> 
+                <?php }  ?>
 
                 <?php
                   }

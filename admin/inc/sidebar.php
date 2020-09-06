@@ -12,7 +12,12 @@
               $result = $get_data->fetch_assoc();
           
           ?>
-          <img src="<?php echo $result['image'];?>" class="img-circle" alt="No Image">
+
+          <?php if($result['image']) { ?>
+            <img class="img-circle" src="<?php echo $result['image'];?>" name="image" width="150" /> 
+          <?php } else { ?>
+            <img class="img-circle" src="upload/users/noimage.png" name="image" width="150" /> 
+          <?php }  ?>
 
           <?php
 

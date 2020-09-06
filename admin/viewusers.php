@@ -79,17 +79,15 @@
                                             <td><?php echo $result['name'];?></td>
                                             <td><?php echo $result['username'];?></td>
                                             <td><?php echo $result['email'];?></td>
+                                            
                                             <td>
-                                                <?php 
-                                                    if($result['image']){
-                                                        echo "<img width='50' height='50' src='$result[image]' ";
-                                                    }
-                                                    else{
-                                                        echo "No Image";
-                                                    }
-                                                ?>
-                                                
+                                            <?php if($result['image']) { ?>
+                                            <img class="img-responsive img-thumbnail" src="<?php echo $result['image'];?>" name="image" width="60" /> 
+                                            <?php } else { ?>
+                                            <img class="img-responsive img-thumbnail" src="upload/users/noimage.png" name="image" width="60" /> 
+                                            <?php }  ?>
                                             </td>
+
                                             <td>
                                                 <?php 
                                                     if($result['role'] == 1){

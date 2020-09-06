@@ -73,7 +73,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <img class="img-responsive img-thumbnail" src="<?php echo $result['image'];?>" name="image" width="150" height="150"/> <br>
+                                <?php if($result['image']) { ?>
+                                    <img class="img-responsive img-thumbnail" src="<?php echo $result['image'];?>" name="image" width="150" height="150"/> 
+                                <?php } else { ?>
+                                    <img class="img-responsive img-thumbnail" src="upload/users/noimage.png" name="image" width="150" height="150"/> 
+                                <?php }  ?>
+
+                                <br>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
