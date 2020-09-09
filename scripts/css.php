@@ -8,3 +8,4 @@
 <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
 <link rel="stylesheet" href="css/style.css">
+
