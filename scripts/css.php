@@ -9,3 +9,20 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<?php
+    $query = "SELECT * FROM tbl_themes WHERE id = '1' ";
+    $get_themes = $dbObj->select($query);
+    while ($result = $get_themes->fetch_assoc()) {
+    	if($result['themes'] == 'default'){
+    		echo "<link rel='stylesheet' href='themes/default.css' />";
+    	}
+    	else if($result['themes'] == 'red'){
+    		echo "<link rel='stylesheet' href='themes/red.css' />";
+    	}
+    	else if($result['themes'] == 'green'){
+    		echo "<link rel='stylesheet' href='themes/green.css' />";
+    	}
+	}
+
+?>
+       

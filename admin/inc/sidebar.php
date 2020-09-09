@@ -44,6 +44,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="themes.php"><i class="fa fa-circle-o"></i> Themes</a></li>
             <li><a href="titleslogan.php"><i class="fa fa-circle-o"></i> Title & Slogan</a></li>
             <li><a href="social.php"><i class="fa fa-circle-o"></i> Social Media</a></li>
             <li><a href="copyright.php"><i class="fa fa-circle-o"></i> Copyright</a></li>

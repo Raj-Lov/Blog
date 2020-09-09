@@ -99,6 +99,13 @@
 		background: #23B24C;
 		color: #fff;
 	}
+	.blog-pagination .page-link:hover {
+		color: #fff;
+		text-decoration: none;
+		background-color: transparent;
+		color: #23B24C;
+		border-color: #222;
+	}
 	.single-footer-widget .click-btn {
 		background: #23B24C;
 		color: #fff;
