@@ -1,0 +1,491 @@
+[33mcommit 36ebf649f05992619fadfd525ef6b7d24d340824[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Sep 9 17:16:13 2020 +0600
+
+    Themes different style functionality process done
+
+[33mcommit c1df691613322f9bfb26c711762e8ca34b4828f2[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Sep 9 16:41:16 2020 +0600
+
+    green new style added
+
+[33mcommit c4fe52dcedfdfc057480e9df60c9482daaec4192[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Sep 9 15:24:43 2020 +0600
+
+    Themes with different style css file create done
+
+[33mcommit bd2cd1728336a54540c6d3a82bb535c39adcda93[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Sep 9 14:33:50 2020 +0600
+
+    Meta, Css, Js links partialized
+
+[33mcommit eaca5fe9276956e1e3dd88f94ebe2f7ef7c60c65[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon Sep 7 14:21:03 2020 +0600
+
+    Forget password system added with php mail function
+
+[33mcommit 010b2fabd116adcba6c13f6f9711c060366afa5b[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun Sep 6 20:58:35 2020 +0600
+
+    Simple issue fixed, default image added for user role in view page
+
+[33mcommit 990a4ff8bc24df2d0f350b81f2cc03540f3b4f19[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun Sep 6 20:31:58 2020 +0600
+
+    Check email is Exist or not when add new user role
+
+[33mcommit 06f52d1f7598ae20ede869e755b44ed7c3b04475[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun Sep 6 20:20:57 2020 +0600
+
+    Simple changes in login.php , existing code removed
+
+[33mcommit da9d37bfb9e02efa96698cfd695057b146128e27[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sat Sep 5 13:37:14 2020 +0600
+
+    view.post added for every role based user
+
+[33mcommit c0622ab967f9c97649e48a62fa260372e25622b0[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sat Sep 5 13:17:32 2020 +0600
+
+    Role base post edit and delete process done
+
+[33mcommit c43f3304673d80df1879962a6f1ad55cfc642a69[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sat Sep 5 13:04:29 2020 +0600
+
+    Post insert by user role based track process done
+
+[33mcommit 5db213280443400781c675702cf29211c4b009a4[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Sep 2 13:23:44 2020 +0600
+
+    User role based permission process done 1
+
+[33mcommit 8b91c53bbbc8132a7ddb41d3b7436ad06190e9d8[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Sep 2 12:39:34 2020 +0600
+
+    User detais view process done
+
+[33mcommit fee03d68935d595e521dc95ea411c0f3a7fb7d28[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon Aug 31 13:01:03 2020 +0600
+
+    User deleted process done and fix simple issue
+
+[33mcommit dc1589553989db98a86084d161179275c9e66262[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun Aug 30 13:08:12 2020 +0600
+
+    fix profile image update issue if user dont want to update image
+
+[33mcommit 735b435d4ccebe335ff88e43cff2819b0df8dfc6[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun Aug 9 22:42:19 2020 +0600
+
+    Simple design issue fix in html
+
+[33mcommit e9ac7564a7016e1040379b94142a8bff9462abe1[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri Aug 7 23:14:06 2020 +0600
+
+    view users page shown complete
+
+[33mcommit 4bc1693f1a1e83d2bbcae34d1ad23c713b698de9[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 22 23:54:00 2020 +0600
+
+    User profile updated with and retrieved from db
+
+[33mcommit 06fff5990a9c7c57ba2c533e6598cc1237cbbf7b[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 22 21:49:47 2020 +0600
+
+    bug fixed
+
+[33mcommit ef06de52cd9028b38044de056cb59d9229377029[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 22 21:23:50 2020 +0600
+
+    bug fixed
+
+[33mcommit d07f7903507ca76a82b6997172790711cad9f696[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 22 21:14:29 2020 +0600
+
+    Role based user create done
+
+[33mcommit 85a64641e714bdd95ffdfdbf097e041f80557fc4[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu May 21 00:41:39 2020 +0600
+
+    simple change in post.php
+
+[33mcommit 1edd9d27f8a4c0ecc8c125fb4dfed4e715d26c7d[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu May 21 00:35:44 2020 +0600
+
+    Front page site meta keywords and post keywords process done
+
+[33mcommit 91787b9ab730f326338ed00d98593034803be052[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 20 23:53:29 2020 +0600
+
+    Notification for incoming messages bug fixes done
+
+[33mcommit f084194b1c4c37cc94d2814c8d89e9b0ef9ac2ab[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 20 21:18:17 2020 +0600
+
+    Notification from incoming messages process done
+
+[33mcommit 4147400c9dee3e8b22abc4dbfb480f9aa8501597[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 20 01:18:20 2020 +0600
+
+     Seen messages deleted process done
+
+[33mcommit e44dd9b3af1a9909249d676f0e601df4f2d16244[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 20 00:46:06 2020 +0600
+
+    Message sent to seen box after click in seen button process
+
+[33mcommit e3147366fb66c8a613f86974dd741cdadf97e7de[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 19 23:56:58 2020 +0600
+
+    Reply message by id done
+
+[33mcommit e518d9ad6f2ac094ea464a62a997363e5065bc6d[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 19 22:09:31 2020 +0600
+
+    viewing messages in admin panel by id
+
+[33mcommit 43608bf67111d5eff2c1bf01cf690cbf738fee7b[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 19 17:11:32 2020 +0600
+
+    Working with inbox , shown all messages in admin panel
+
+[33mcommit 73dfc5ff104c6b8b2db373c6d32e992fdfa5c6e7[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 19 14:33:48 2020 +0600
+
+    Filter validate email function added in email input
+
+[33mcommit 1a28db52b5d8160ccdebe1857fef6392d2c3c5a2[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 19 14:20:54 2020 +0600
+
+    Contact form final validation completed
+
+[33mcommit a62475c4b45dac75f203d96b3fbf0ad29a4b6613[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 18 02:37:08 2020 +0600
+
+    Contact page message sending process done
+
+[33mcommit e4bea6caaa4e279edb380759e6e437d465aced78[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 18 02:23:54 2020 +0600
+
+    Contact form validation done
+
+[33mcommit 1b2b8c0cb22a24dc7d4d9ca64f25367d840cfa72[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 18 01:16:36 2020 +0600
+
+    Simple change and comment done for last work
+
+[33mcommit d1f36e1e11ae51bd1cea9d8c39c5a73b83201da1[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 15 02:34:56 2020 +0600
+
+    Front page index.php navigation menubar highlight active done
+
+[33mcommit 0b37aa886f0b5adf82bbdc42269cc24bc793e874[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu May 14 23:18:10 2020 +0600
+
+    Dynamically show page title , post title in the header title bar
+
+[33mcommit fbcfd4b41d032a8e9b6e62c3aaf733bc7933d569[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu May 14 22:19:00 2020 +0600
+
+    404 page added
+
+[33mcommit 42985733d7ff3de9a86b77185324290ca74cbbd3[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 22:27:35 2020 +0600
+
+    Showing pages dynamically in front page
+
+[33mcommit 860471666bb219eb6b622f29402e1517e92a387b[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 21:50:33 2020 +0600
+
+    Page deleted process done from admin panel
+
+[33mcommit 3bbe347470ed422b7747b84dab0e35a783245049[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 21:29:45 2020 +0600
+
+    Page update process done from admin panel
+
+[33mcommit af83b3befc38f18eed0ac7e78f6f0518f782d818[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 21:13:34 2020 +0600
+
+    Create page dynamically from admin panel
+
+[33mcommit 50ce9a022521bf69f1d98904cd17351e0c849c65[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 03:24:10 2020 +0600
+
+    Copyright data update process done from admin panel and shown in front page index.php
+
+[33mcommit 85b1c3eec515844f0aadf4f3deaadcdf5daf2e39[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 02:46:59 2020 +0600
+
+    Social links update from admin panel and shown in front page index.php done
+
+[33mcommit 487f7cc13f6d013871895a7ba730d70d541e1a1e[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed May 13 02:22:06 2020 +0600
+
+    Check if user logged in then can't view login.php page it will redirect to index.php
+
+[33mcommit 1843165a18d6ca19d41ed3248bdf07d50537ffb0[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 12 23:53:41 2020 +0600
+
+    Site title and logo shown in front page
+
+[33mcommit fcb198df8f6e591c67401e6dfc29290679d706dd[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 12 23:25:29 2020 +0600
+
+    Title slogan logo update process done from admin panel
+
+[33mcommit 2599a6f506671419d03caefb14298c466bd14007[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 12 03:27:17 2020 +0600
+
+    Blog title slogan logo retrieve in admin panel from database
+
+[33mcommit 1a5841ee359452adb2fe2aeac09a5a5bdfce5bf0[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 11 23:30:17 2020 +0600
+
+    Post deleted done by id from admin panel
+
+[33mcommit 4ea496b42a6d41b7e9e0da37ba18637c2d7a060f[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 11 22:55:19 2020 +0600
+
+    Post updated procedure done from admin panel
+
+[33mcommit 8043f3ab7f2348892d0fbfd1faee0696e6501a7e[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 8 03:15:58 2020 +0600
+
+    Selected category option of a post in editpost.php by id
+
+[33mcommit 29c22727d26b6cc80f5b0a89c2ea04eec4ef841b[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 8 03:04:56 2020 +0600
+
+    Show all post details in admin panel edit page by post id
+
+[33mcommit 34682ad10dcb3e240894d85368896d6b6eb77d19[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu May 7 23:44:29 2020 +0600
+
+    Simple issue fix
+
+[33mcommit 0f4744a4b73214bad71cb375250b79dc2a127836[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu May 7 23:39:51 2020 +0600
+
+    All posts and details shown in admin panel from database
+
+[33mcommit 3139961e9d3e82c26fe0552e8161c96453fde017[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue May 5 00:17:42 2020 +0600
+
+    Post insert completed from admin panel
+
+[33mcommit 8e6d80b0cb4646727a3e1a64e34676458381cef4[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 4 17:22:00 2020 +0600
+
+    showing message if category doesn't have a post
+
+[33mcommit c9a382a0a8949410699bc54b46d8ab07949f7513[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 4 17:09:37 2020 +0600
+
+    category delete by id complete
+
+[33mcommit a757ecad94d5d9794b73d2de7565c6f58bfeac22[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 4 03:15:29 2020 +0600
+
+    Category edit update by id done
+
+[33mcommit 5bc6cf7d3771ec6f1ad45dfa7ec71f6a0fa66c6f[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 4 00:48:50 2020 +0600
+
+    save/insert category complete
+
+[33mcommit 7b84a236b0b879fccb1b3765fb244978bbd01f4e[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Mon May 4 00:09:21 2020 +0600
+
+    View all categories in admin panel
+
+[33mcommit 64da63a773c376b9df4cf25111bd836da2487e2f[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun May 3 23:26:49 2020 +0600
+
+    simple changes in Session class
+
+[33mcommit 7f1a2da174733c423518046305cdf96289df7ee0[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun May 3 22:49:30 2020 +0600
+
+    check authentication user or not and logout option completed
+
+[33mcommit d75e31a21fa3b8a5c3a4e4f28e8d54e70c28d3a0[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun May 3 21:51:49 2020 +0600
+
+    comment done
+
+[33mcommit b7014cfe5d8d98945acf051ee25dd1ccfbdbd514[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun May 3 21:49:49 2020 +0600
+
+    Login auth done
+
+[33mcommit f38a0787e1711ecde146b5aa8ba7a30a0f254814[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Sun May 3 01:03:19 2020 +0600
+
+    simple changes
+
+[33mcommit 1dae65955a300bf849ff01d22ed56f4bc4aa9165[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 1 02:52:34 2020 +0600
+
+    Related post shown without showing current post - solved
+
+[33mcommit eaaba7a0d1a35c027a1f1d37405d1c5201c7ccaa[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 1 02:06:16 2020 +0600
+
+    Session class created
+
+[33mcommit c8da1fb1f90dc5182c3d640582b1dc4b4e28a2f2[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Fri May 1 00:51:43 2020 +0600
+
+    Admin template mastering page done
+
+[33mcommit b3bb55f5fc9e60579ab73fd0be9a3639c21cf81a[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu Apr 30 20:53:49 2020 +0600
+
+    Search functionality added
+
+[33mcommit d70eb994d56885169fd429e00fbb88361e98beb1[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu Apr 30 01:21:29 2020 +0600
+
+    Latest post shown in sidebar
+
+[33mcommit dbb2f0253d747122988c2b6a37b2896666ff07bc[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu Apr 30 00:52:08 2020 +0600
+
+    Category wise post retrieve from db
+
+[33mcommit b77b841f416a38d3ed3b489c954b5a3c054cf373[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Thu Apr 30 00:15:38 2020 +0600
+
+    Categories shown from database
+
+[33mcommit 0b06d6b0a07e83cac8f234bc6a6482e8096a077c[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 17:24:42 2020 +0600
+
+    post details style modified
+
+[33mcommit 02491fb95c67be7386abf87008ee26b4954fa576[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 17:16:23 2020 +0600
+
+    Showing single post details with related post
+
+[33mcommit 8b5c089e33d781faba7fd05d5f31e99dcbc90fb4[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 15:47:33 2020 +0600
+
+    Css style changes and image added
+
+[33mcommit b00f2d7bedb06fdc9cd865fdee4be3ddb53796f5[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 15:21:14 2020 +0600
+
+    small css change
+
+[33mcommit a29777a04c9d8821c846f9a0dcd7ddd4837312c3[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 04:45:37 2020 +0600
+
+    Pagination functionality added in index.php
+
+[33mcommit 4da6c2ca6366ec859019d54ca6c504a13644297a[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 00:25:24 2020 +0600
+
+    Post images shown from database
+
+[33mcommit 6caec1cc8fc6ef7106fe04cbff0de6c4fecdeecb[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Wed Apr 29 00:04:31 2020 +0600
+
+    Post body text shorten function added in helper class
+
+[33mcommit d0578bbe6138783bf7406481b8a35659add1b9ad[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue Apr 28 23:48:51 2020 +0600
+
+    Helper Format class added and date format method applied
+
+[33mcommit 54e1bac77502741d64f743ef42a0da8c0a4c9449[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue Apr 28 23:37:04 2020 +0600
+
+    Blog posts retrieve from database in index page
+
+[33mcommit 96f5d831a44c840ab9cc2b17c04c8350eba269ec[m
+Author: Md Tawfique Hossain <md.tawfiquehossain@gmail.com>
+Date:   Tue Apr 28 23:11:57 2020 +0600
+
+    Front End Customization Ready Initial Commit

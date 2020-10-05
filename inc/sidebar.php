@@ -1,16 +1,30 @@
+<script>
+  function myfunction() {
+    var search = document.getElementById("search").value;
+    if(search == ''){
+      alert("Write something before search!");
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+</script>
+
 <!-- Start Blog Post Siddebar -->
           <div class="col-lg-4 sidebar-widgets">
               <div class="widget-wrap">
                 <div class="single-sidebar-widget newsletter-widget">
                   <h4 class="single-sidebar-widget__title">Search Post</h4>
+
                   <form method="get" action="search.php">
                     <div class="form-group mt-30">
                       <div class="col-autos">
-                        <input type="text" name="search" class="form-control" id="inlineFormInputGroup" placeholder="Search Keyword" onfocus="this.placeholder = ''"
+                        <input type="text" name="search" class="form-control" id="search" placeholder="Search Keyword" onfocus="this.placeholder = ''"
                           onblur="this.placeholder = 'Search Keyword'">
                       </div>
                     </div>
-                    <input class="bbtns d-block mt-20 w-100" name="submit" type="submit" value="Search"/>
+                    <input onclick=" return myfunction()" class="bbtns d-block mt-20 w-100" name="submit" type="submit" value="Search"/>
                   </form>
                 </div>
 
@@ -118,3 +132,4 @@
     </section>
     <!--================ End Blog Post Area =================-->
   </main>
+

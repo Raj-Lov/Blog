@@ -26,21 +26,21 @@
 
 				<?php
 
-					if (!isset($_GET['search']) || $_GET['search'] == NULL) {
-					    header("location: 404.php");
+					if ( !isset($_GET['search']) || $_GET['search'] == NULL ) {
+					    echo "<script>location.href ='404.php'; </script>";
 					}
 					else{
 				    	$search = $_GET['search'];
-				  	}
 
-	              $query = "SELECT * FROM tbl_posts WHERE title LIKE '%$search%' OR body LIKE '%$search%'";
-	              $posts = $dbObj->select($query);
-	              if ($posts) {
-	                while ($result = $posts->fetch_assoc()) {
-	                	echo "<h4 class='orange-color'>Showing results for : $search</h4> <br>";
+				    	$query = "SELECT * FROM tbl_posts WHERE title LIKE '%$search%' OR body LIKE '%$search%'";
+	              		$posts = $dbObj->select($query);
+	              		if ($posts) {
+	                	while ($result = $posts->fetch_assoc()) {
+	                		echo "<h4 class='orange-color'>Showing results for : $search</h4> <br>";
+
+	              
 	            ?>
 
-	            <?php  ?>
 
 	            <div class="single-recent-blog-post">
 	              <div class="thumb">
@@ -60,16 +60,22 @@
 	                <a class="button" href="post.php?id=<?php echo $result['id']?>">Read More <i class="ti-arrow-right"></i></a>
 	              </div>
 	            </div> <hr>
+
 	          <?php
 
-	            }
-	            /* End of while loop*/
-	        	} /* End of if condition*/
-	        	else{
-	        		echo "<h2 class='search'>Your search keyword was not found</h2>";
-	        	} // End of else condition
+		            }	/* End of while loop*/
+		            	
+		        	} 	/* End of if condition*/
+
+	        		/* End of first else condition*/
+
+		        	else{
+	        			echo "<h2 class='search'>Your search keyword was not found</h2>";
+		        	} 
+				}
 
 	            ?>
+
         	</div>
 
 
