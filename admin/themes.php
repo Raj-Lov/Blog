@@ -27,10 +27,10 @@
                 $query="UPDATE tbl_themes SET themes = '$theme' WHERE id = '1' ";
                 $update = $dbObj->update($query);
                 if ($update) {
-                    $category_success = "<span class='success'> Theme updated successfully! </span>";
+                    $theme_success = "<span class='success'> Theme updated successfully! </span>";
                 }
                 else{
-                    $category_failed = "<span class='error'> Theme not updated! </span>";
+                    $theme_failed = "<span class='error'> Theme not updated! </span>";
                 }
 
               }
@@ -60,6 +60,24 @@
                                 <input <?php if($result['themes'] == 'green'){echo "checked";}?> type="radio" name="theme" value="green" id="green" >
                                 <label for="green">Green</label>
                             </div>
+
+
+                        <?php
+
+                            if(isset($theme_success)){
+                                echo $theme_success;
+                            }
+                            if(isset($theme_failed)){
+                                echo $theme_failed;
+                            }
+
+                        }
+
+                            
+                        ?>
+
+                            
+
                         </div>
 
                         <div class="box-footer">
@@ -67,9 +85,8 @@
                         </div>
                     </form>
 
-                    <?php
-                        }
-                    ?>
+                    
+                    
 
                 </div>
                 <!-- /.box -->
