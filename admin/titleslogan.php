@@ -41,11 +41,7 @@
                         $title = $dbObj->link->real_escape_string($_POST['title']);
                         $slogan = $dbObj->link->real_escape_string($_POST['slogan']);
 
-                        if (empty($title) || empty($slogan) ) {
-                            echo "<span class='error'> Field must not be empty! </span>";
-                        
-                        }
-                        else if(!empty($file_name)){
+                        if(!empty($file_name)){
                             if ($file_size >1048567) {
                                 echo "<span class='error'>Image Size should be less then 1MB!</span>";
                             }
