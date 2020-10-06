@@ -48,12 +48,13 @@ $(function() {
         loop: true,
         margin: 30,
         items: 1,
-        nav: true,
-        autoplay: 2500,
-        smartSpeed: 1500,
+        // nav: true,
+        autoplay: 4500,
+        smartSpeed: 1000,
+        autoplayHoverPause: true, // Stops autoplay
         dots: false,
         responsiveClass: true,
-        navText : ["<div class='blog-slider__leftArrow'><img src='images/home/left-arrow.png'></div>","<div class='blog-slider__rightArrow'><img src='images/home/right-arrow.png'></div>"],
+        // navText : ["<div class='blog-slider__leftArrow'><img src='images/home/left-arrow.png'></div>","<div class='blog-slider__rightArrow'><img src='images/home/right-arrow.png'></div>"],
         responsive:{
           0:{
               items:1

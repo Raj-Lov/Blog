@@ -37,7 +37,7 @@
                 $toemail = $formatObj->validation($_POST['toemail']);
                 $fromemail = $formatObj->validation($_POST['fromemail']);
                 $subject = $formatObj->validation($_POST['subject']);
-                $message = $formatObj->validation($_POST['message']);
+                // $message = $formatObj->validation($_POST['message']);
 
                 $toemail = $dbObj->link->real_escape_string($_POST['toemail']);
                 $fromemail = $dbObj->link->real_escape_string($_POST['fromemail']);
