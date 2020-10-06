@@ -57,7 +57,7 @@
                                                 
                                             <!-- If role base post edit and delete Only admin can delete -->
                                             <?php if(Session::get('userRole') == '1'){ ?>
-                                            <a href="edit-slider.php?edit_id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this Post?');" href="delete-slider.php?delete_id=<?php echo $result['id']?>">Delete</a></td>
+                                            <a href="edit-slider.php?edit_id=<?php echo $result['id']?>">Edit</a> | <a onclick="return confirm('Are you sure to Delete this Slider?');" href="delete-slider.php?delete_id=<?php echo $result['id']?>">Delete</a></td>
                                             <?php }?>
                                         </tr>
 
