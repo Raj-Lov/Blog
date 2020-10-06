@@ -76,6 +76,21 @@
 
           </ul> 
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-certificate"></i>
+            <span>Slider Option</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="addslider.php"><i class="fa fa-circle-o"></i> Add Slider</a></li>
+            <li><a href="sliderlist.php"><i class="fa fa-circle-o"></i> View Slider</a></li>
+          </ul> 
+        </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-tags"></i>
