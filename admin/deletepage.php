@@ -19,9 +19,19 @@
     // Delete from database, process starts here
     $query = "DELETE FROM tbl_pages WHERE id = '$del_id' " ;
     $deleted_data = $dbObj->delete($query);
+
     if ($deleted_data) {
-      echo "<script>alert('Page Deleted Successfully!'); </script>" ;
-      echo "<script>location.href='index.php'; </script>" ;
+      $affected_rows = $dbObj->link->affected_rows;
+
+      if($affected_rows){
+        echo "<script>alert('Page Deleted Successfully!'); </script>" ;
+        echo "<script>location.href='index.php'; </script>" ;
+      }
+      else{
+        echo "<script>alert('Bad request submit!'); </script>" ;
+        echo "<script>location.href='index.php'; </script>" ;
+      }
+      
     }
     else{
       echo "<script>alert('Page Not Deleted!'); </script>" ;

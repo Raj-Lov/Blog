@@ -30,15 +30,31 @@
 
     // Delete from database, process starts here
     $query = "DELETE FROM tbl_sliders WHERE id = '$del_id' " ;
+
     $delete_data = $dbObj->delete($query);
+
     if ($delete_data) {
-      echo "<script>alert('Slider Deleted Successfully!'); </script>" ;
-      echo "<script>location.href='sliderlist.php'; </script>" ;
+      
+      //The affected_rows / mysqli_affected_rows() function returns the number of affected rows in the previous SELECT, INSERT, UPDATE, REPLACE, or DELETE query.
+      // $affected = mysqli_affected_rows($dbObj->link);
+      // var_dump($affected);
+      $affected = $dbObj->link->affected_rows;
+
+      if($affected){
+        echo "<script>alert('Slider Deleted Successfully!'); </script>" ;
+        echo "<script>location.href='sliderlist.php'; </script>" ;
+      }
+      else{
+        echo "<script>alert('Bad request submit!'); </script>" ;
+        echo "<script>location.href='sliderlist.php'; </script>" ;
+      }
+      
     }
     else{
       echo "<script>alert('Slider Not Deleted!'); </script>" ;
       echo "<script>location.href='sliderlist.php'; </script>" ;
     }
+    
 
   }
 

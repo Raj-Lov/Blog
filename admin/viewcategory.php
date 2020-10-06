@@ -35,7 +35,17 @@
                                 $query = "DELETE FROM tbl_categories WHERE id = '$delete_id' ";
                                 $delete_cat = $dbObj->delete($query);
                                 if ($delete_cat) {
-                                    echo "<span class='success'> Category deleted successfully! </span>";
+
+                                    $affected = $dbObj->link->affected_rows;
+
+                                    if($affected){
+                                        echo "<script>alert('Category Deleted Successfully!'); </script>" ;
+                                        echo "<script>location.href='viewcategory.php'; </script>" ;
+                                    }
+                                    else{
+                                        echo "<script>alert('Bad request submit!'); </script>" ;
+                                        echo "<script>location.href='viewcategory.php'; </script>" ;
+                                    }
                                     
                                 }
                                 else{
