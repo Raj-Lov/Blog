@@ -88,9 +88,9 @@
               <li class="header">You have <?php echo $total_message; ?> messages</li>
 
               <?php 
-
+                $i = 0;
                 while ($result = $get_data->fetch_assoc()) {
-                  
+                    $i++;
                 ?>
               <li>
                 <ul class="menu">
@@ -106,6 +106,10 @@
                 </ul>
               </li>
                <?php
+                  if($i == 3){
+                      break;
+                    }
+
                   } // end of while loop 
                 ?>
               <li class="footer"><a href="inbox.php">See All Messages</a></li>
