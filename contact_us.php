@@ -71,8 +71,7 @@
             $query = "INSERT INTO tbl_contacts(name, email, subject, message) VALUES( '$name','$email','$subject','$message') ";
               $inserted_rows = $dbObj->create($query);
               if ($inserted_rows) {
-                $success_message = "<span class='success'>Message sent successfully!
-               </span>";
+               $success_message = "<span class='success'>Message Sent Successfully! ";
                $name = $email = $subject = $message = "" ;
               }
               else{

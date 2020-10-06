@@ -2587,15 +2587,19 @@ a {
     color: #FF9907;
 }
 
-.success{
-  color: #018001;
-  margin: 10px 0;
-  display: inline-block;
-  padding: 0 0 0 5px;
+.success {
+    color: #fff;
+    margin: 10px 0;
+    display: block;
+    padding: 5px 5px;
+    background: green;
+    font-size: 14px;
 }
+
 .error {
   color: #fd0000;
   margin: 10px 0;
   display: inline-block;
   padding: 0 0 0 5px;
+  font-size: 12px;
 }
