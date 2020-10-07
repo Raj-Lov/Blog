@@ -100,7 +100,7 @@
 
   <!-- Js files -->
   <?php include_once 'scripts/js.php';?>
-
+  
 
 </body>
 </html>
