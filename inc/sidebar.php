@@ -28,7 +28,7 @@
                   </form>
                 </div>
 
-
+                <!-- All categories -->
                 <div class="single-sidebar-widget post-category-widget">
                   <h4 class="single-sidebar-widget__title">Catgory</h4>
                   <ul class="cat-list mt-20">
@@ -42,7 +42,7 @@
                     <li>
                       <a href="posts.php?category=<?php echo $category['id']?>" class="d-flex justify-content-between">
                         <p><?php echo $category['name']?></p>
-                        <p>(03)</p>
+                        <!-- <p>(03)</p> -->
                       </a>
                     </li>
 

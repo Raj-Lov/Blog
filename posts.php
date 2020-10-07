@@ -50,7 +50,6 @@
 	                <a href="post.php?id=<?php echo $result['id']?>">
 	                  <h3><?php echo $result['title'] ?></h3>
 	                </a>
-	                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
 
               	 	<?php echo $formatObj->postBodyShorten($result['body'])?>
               	 	
