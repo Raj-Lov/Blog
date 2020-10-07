@@ -94,27 +94,28 @@
               <div class="col-md-4">
                 <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img src="admin/<?php echo $rel_post_get['image']?>" alt="Related Article" class="img-responsive img-thumbnail"><span>Post Title</span></a>
               </div>
-                <?php 
+            <?php 
 
               } // related post while end here
 
-              ?>
+             } // related post if condition end here
+
+            
+           //    echo "  " ;
+           // // related post else condition end here
+            
+            else { ?>
+              <div class="col-md-6">
+                <h2>No Related Posts Available</h2>
+              </div>
+            
+            <?php } ?>
 
             </div>
 
         
 
-          <?php
-
-            } // related post if condition end here
-
-            else{
-              echo "<div class='col-md-12'>
-              <h2>No Related Posts Available</h2> </div> " ;
-            } // related post else condition end here
-
-          ?>
-
+          
           </div>
 
           <hr>
@@ -155,7 +156,8 @@
           ?>
 
         </div>
+        <?php include_once 'inc/sidebar.php' ?>
     </div>
     
-<?php include_once 'inc/sidebar.php' ?>
+
 <?php include_once 'inc/footer.php'?>
