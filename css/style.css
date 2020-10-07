@@ -454,7 +454,8 @@ a {
         margin-right: 0px;
         display: block;
         border-bottom: 1px solid #ededed33;
-        border-radius: 0px
+        border-radius: 0px;
+        color: #fff;
     }
     .header_area .navbar .search {
         margin-left: 0px
@@ -683,6 +684,7 @@ a {
         margin-bottom: 20px
     }
 }
+
 
 .hero-banner {
     position: relative;
@@ -1472,7 +1474,6 @@ a {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
     background: #fff;
     width: 100%;
     padding-left: 10px
@@ -2583,6 +2584,17 @@ a {
     text-align: center;
     font-size: 20px;
 }
+
+.sidebar-post-img{
+    width: 290px;
+    height: 200px;
+}
+
+.related-img{
+    width: 100%;
+    height: auto;
+}
+
 .orange-color{
     color: #FF9907;
 }
@@ -2602,4 +2614,43 @@ a {
   display: inline-block;
   padding: 0 0 0 5px;
   font-size: 12px;
+}
+
+
+
+@media all and (max-width: 1199px){
+    .sidebar-post-img {
+        width: 230px;
+        height: 200px;
+    }
+}
+
+@media all and (max-width: 991px){
+    .sidebar-post-img {
+        width: 630px;
+        height: 200px;
+    }
+}
+
+@media all and (max-width: 767px){
+    .sidebar-post-img {
+        width: 450px;
+        height: 200px;
+    }
+}
+
+@media all and (max-width: 575px){
+    .sidebar-post-img {
+        width: 515px;
+        height: 200px;
+        max-width: 100%;
+    }
+}
+
+
+@media all and (max-width: 320px){
+    .sidebar-post-img {
+        width: 260px;
+        height: 200px;
+    }
 }

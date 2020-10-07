@@ -91,8 +91,8 @@
                 while ($rel_post_get = $related_post->fetch_assoc()) {
 
             ?>
-              <div class="col-md-4">
-                <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img width='150' height='100' src="admin/<?php echo $rel_post_get['image']?>" alt="Related Article" class="img-responsive ">
+              <div class="col-md col-sm col-xs">
+                <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img src="admin/<?php echo $rel_post_get['image']?>" alt="Related Article" class="related-img img-responsive ">
                 <h6 align="center">Post Title</h6>
               </a>
                 
@@ -108,7 +108,7 @@
            // // related post else condition end here
             
             else { ?>
-              <div class="col-md-6">
+              <div class="col-sm-6">
                 <h2>No Related Posts Available</h2>
               </div>
             

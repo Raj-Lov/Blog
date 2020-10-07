@@ -6,8 +6,10 @@
           <div class="single-footer-widget">
             <h6>About Us</h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
-              magna aliqua.
+              This website is for everyone who write codes. You don't require to sign up in this website.
+              We don't collect any of you personal data or information.
+              We don't share any data of yours to others. 
+              If you have any questions about this privacy statement, contact with me.
             </p>
           </div>
         </div>

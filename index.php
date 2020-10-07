@@ -34,14 +34,12 @@
                 <ul class="thumb-info">
                   <li><a href="#"><i class="ti-user"></i><?php echo $result['author']?></a></li>
                   <li><a href="#"><i class="ti-notepad"></i><?php echo $formatObj->dateFormat($result['date'])?></a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
                 </ul>
               </div>
               <div class="details mt-20">
                 <a href="post.php?id=<?php echo $result['id']?>">
                   <h3><?php echo $result['title'] ?></h3>
                 </a>
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
                 <?php echo $formatObj->postBodyShorten($result['body'])?>
                 
                 <a class="button" href="post.php?id=<?php echo $result['id']?>">Read More <i class="ti-arrow-right"></i></a>

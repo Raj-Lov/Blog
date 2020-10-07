@@ -68,7 +68,7 @@
                   ?>
                     <div class="single-post-list">
                       <div class="thumb">
-                        <a href="post.php?id=<?php echo $result['id'] ;?>"><img height="200" width="100%" class="card-img rounded-0" src="admin/<?php echo $result['image']?>" alt="Latest Post"></a>
+                        <a href="post.php?id=<?php echo $result['id'] ;?>"><img class="sidebar-post-img" class="card-img rounded-0" src="admin/<?php echo $result['image']?>" alt="Latest Post"></a>
                         <ul class="thumb-info">
                           <li><a href="#"><?php echo $result['author'] ;?></a></li>
                           <li><a href="#"><?php echo $formatObj->dateFormat($result['date']) ;?></a></li>
