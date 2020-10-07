@@ -61,7 +61,7 @@
                   <h4 class="single-sidebar-widget__title">Latest Post</h4>
                   <div class="popular-post-list">
                   <?php 
-                    $query = "SELECT * FROM tbl_posts ORDER BY id DESC LIMIT 5";
+                    $query = "SELECT * FROM tbl_posts ORDER BY id DESC LIMIT 3";
                     $post = $dbObj->select($query);
                     if ($post) {
                       while ($result = $post->fetch_assoc()) {
@@ -94,36 +94,6 @@
 
                   </div>
                 </div>
-
-                  <div class="single-sidebar-widget tag_cloud_widget">
-                    <h4 class="single-sidebar-widget__title">Popular Tags</h4>
-                    <ul class="list">
-                      <li>
-                          <a href="#">project</a>
-                      </li>
-                      <li>
-                          <a href="#">love</a>
-                      </li>
-                      <li>
-                          <a href="#">technology</a>
-                      </li>
-                      <li>
-                          <a href="#">travel</a>
-                      </li>
-                      <li>
-                          <a href="#">software</a>
-                      </li>
-                      <li>
-                          <a href="#">life style</a>
-                      </li>
-                      <li>
-                          <a href="#">design</a>
-                      </li>
-                      <li>
-                          <a href="#">illustration</a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>

@@ -121,7 +121,7 @@
                 <div class="col-md-4">
                     <h3 class="text-center">Logo</h3>
                     <div class="logo text-center">
-                        <img class="img-thumbnail img-responsive" width="200" height="200" src="<?php echo $result['logo']?>">
+                        <img class="img-thumbnail img-responsive" alt="Logo Here" width="200" height="200" src="<?php echo $result['logo']?>">
                     </div>
                 </div>
             </div>
