@@ -92,7 +92,10 @@
 
             ?>
               <div class="col-md-4">
-                <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img src="admin/<?php echo $rel_post_get['image']?>" alt="Related Article" class="img-responsive img-thumbnail"><span>Post Title</span></a>
+                <a href="post.php?id=<?php echo $rel_post_get['id']?>"><img width='150' height='100' src="admin/<?php echo $rel_post_get['image']?>" alt="Related Article" class="img-responsive ">
+                <h6 align="center">Post Title</h6>
+              </a>
+                
               </div>
             <?php 
 
