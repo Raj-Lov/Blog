@@ -38,6 +38,7 @@
           <div class="main_blog_details">
             <?php
               $query = "SELECT * FROM tbl_posts WHERE id = $id";
+
               $post = $dbObj->select($query);
               if ($post) {
                 while ($result = $post->fetch_assoc()) {
@@ -53,7 +54,23 @@
                     <p><?php echo $formatObj->dateFormat($result['date'])?></p>
                   </div>
                   <div class="d-flex">
-                    <img width="42" height="42" src="images/blog/c2.jpg" alt="">
+                    <?php
+                      // Get author image in posts using join query 
+                      $joinquery = "SELECT tbl_users.image, tbl_posts.id, tbl_posts.user_id
+                      FROM tbl_users
+                      INNER JOIN tbl_posts
+                      ON tbl_users.id = tbl_posts.user_id AND tbl_posts.id = $id" ;
+
+                      $getImage = $dbObj->select($joinquery);
+                      if ($getImage) {
+                        while ($getresult = $getImage->fetch_assoc()) {
+                    ?>
+                    <!-- <img width="42" height="42" src="images/blog/c2.jpg" alt=""> -->
+                    <img width="42" height="42" src="admin/<?php echo $getresult['image']; ?>" alt="">
+                    <?php 
+                        }
+                      }
+                    ?>
                   </div>
                 </div>
               </div>
