@@ -3,7 +3,7 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "");
-define("DB_NAME", "db_blog_oop");
+define("DB_NAME", "db_blog");
 
 // Front page site title, keyword, description
 define("TITLE", "Tawfique Blog");
